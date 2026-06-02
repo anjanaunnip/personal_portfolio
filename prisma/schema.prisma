@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id            String   @id @default(cuid())
+  title         String
+  description   String
+  image         String?
+  technologies  String[] // Store as array of strings
+  githubUrl     String
+  liveUrl       String
+  featured      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Certificate {
+  id               String   @id @default(cuid())
+  title            String
+  organization     String
+  certificateUrl   String?
+  issuedDate       DateTime
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Analytics {
+  id                String   @id @default(cuid())
+  portfolioViews    Int      @default(0)
+  resumeDownloads   Int      @default(0)
+  contactClicks     Int      @default(0)
+  lastUpdated       DateTime @default(now()) @updatedAt
+}
