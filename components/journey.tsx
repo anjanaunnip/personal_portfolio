@@ -6,9 +6,9 @@ import { GraduationCap, Code2, Zap, BookOpen } from 'lucide-react';
 export default function Journey() {
   const milestones = [
     {
-      year: '2026',
+      year: '2024-26',
       title: 'MCA Graduate',
-      description: 'Completing Master of Computer Applications from Vidya Academy of Science and Technology (CGPA: 9.14/10.0) with strong foundation in software development and emerging technologies.',
+      description: 'Master of Computer Applications from Vidya Academy of Science and Technology (CGPA: 9.14/10.0). Collaborated on 2 projects during internship. Strong foundation in software development and emerging technologies.',
       icon: GraduationCap,
       position: 'left',
     },
@@ -20,16 +20,16 @@ export default function Journey() {
       position: 'right',
     },
     {
-      year: '2024',
-      title: 'AI & Machine Learning Integration',
-      description: 'Developed AgriVision WeedSense using YOLOv8 and OpenCV for ML-based image analysis. Started exploring LLM integration and intelligent automation solutions.',
+      year: '2023-24',
+      title: 'AI & Machine Learning',
+      description: 'Developed AgriVision WeedSense using YOLOv8 and OpenCV for ML-based image analysis. Started exploring LLM integration and intelligent automation solutions. Built 4 projects total.',
       icon: Zap,
       position: 'left',
     },
     {
-      year: '2023',
-      title: 'Programming & Database Foundation',
-      description: 'Bachelor of Computer Application from St. Mary\'s College (CGPA: 8.29/10.0). Built fundamentals in Java, C, Python, databases, and problem-solving with project experience.',
+      year: '2021-24',
+      title: 'Programming Foundation',
+      description: 'Bachelor of Computer Application from St. Mary\'s College (CGPA: 8.29/10.0). Built fundamentals in Java, C, Python, databases, and problem-solving with hands-on project experience.',
       icon: BookOpen,
       position: 'right',
     },

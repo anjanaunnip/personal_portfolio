@@ -1,11 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Award, ExternalLink, ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Award, ExternalLink } from 'lucide-react';
 
 export default function Certifications() {
-  const [showAll, setShowAll] = useState(false);
 
   const certifications = [
     {
@@ -38,9 +36,13 @@ export default function Certifications() {
       logo: '📝',
       color: 'from-[#f093fb] to-[#f5576c]',
     },
+    {
+      company: 'Cybersecurity Fundamentals',
+      title: 'Cisco Networking Academy',
+      logo: '🛡️',
+      color: 'from-[#00b4d8] to-[#0096c7]',
+    },
   ];
-
-  const visibleCerts = showAll ? certifications : certifications.slice(0, 4);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -93,15 +95,14 @@ export default function Certifications() {
         </motion.div>
 
         {/* Certifications Grid */}
-        <div className="relative">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {visibleCerts.map((cert, idx) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {certifications.map((cert, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
@@ -145,21 +146,8 @@ export default function Certifications() {
                 </motion.a>
               </div>
             </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Blur Overlay for Hidden Cards */}
-          <AnimatePresence>
-            {!showAll && certifications.length > 4 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none"
-              ></motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+          ))}
+        </motion.div>
 
         {/* Additional Info */}
         <motion.div
@@ -170,31 +158,9 @@ export default function Certifications() {
           className="mt-20 text-center"
         >
           <div className="glassmorphism-dark p-8 rounded-xl max-w-2xl mx-auto">
-            <p className="text-foreground/80 mb-6">
+            <p className="text-foreground/80">
               Continuously learning and growing with industry-standard certifications to stay updated with the latest technologies and best practices.
             </p>
-            {!showAll && certifications.length > 4 && (
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setShowAll(true)}
-                className="px-6 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all flex items-center space-x-2 mx-auto"
-              >
-                <span>View All Certificates</span>
-                <ChevronDown size={18} />
-              </motion.button>
-            )}
-            {showAll && (
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setShowAll(false)}
-                className="px-6 py-2 border border-[#9f7aea]/50 text-[#9f7aea] rounded-lg font-semibold hover:border-[#9f7aea] transition-all flex items-center space-x-2 mx-auto"
-              >
-                <span>Show Less</span>
-                <ChevronDown size={18} className="rotate-180" />
-              </motion.button>
-            )}
           </div>
         </motion.div>
       </div>

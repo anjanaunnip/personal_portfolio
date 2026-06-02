@@ -149,16 +149,27 @@ export default function Skills() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="glassmorphism-dark p-8 rounded-xl group transition-all duration-300"
+                whileHover={{ y: -15, rotateY: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="glassmorphism-dark p-8 rounded-xl group transition-all duration-300 perspective"
+                style={{ transformStyle: 'preserve-3d' }}
               >
                 {/* Category Header */}
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-background`}>
+                <motion.div 
+                  className="flex items-center space-x-3 mb-6"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div 
+                    className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-background`}
+                    animate={{ rotate: [0, 10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    whileHover={{ rotate: 360, transition: { duration: 0.5 } }}
+                  >
                     <Icon size={24} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground">{category.category}</h3>
-                </div>
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-[#00d9ff] transition-colors">{category.category}</h3>
+                </motion.div>
 
                 {/* Skills List */}
                 <div className="space-y-4">
@@ -178,14 +189,22 @@ export default function Skills() {
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ delay: skillIdx * 0.1, duration: 1, ease: 'easeOut' }}
+                        transition={{ delay: skillIdx * 0.1, duration: 1.2, ease: 'easeOut' }}
                         viewport={{ once: true }}
-                        className={`h-2 rounded-full bg-gradient-to-r ${category.color} relative overflow-hidden`}
+                        className={`h-3 rounded-full bg-gradient-to-r ${category.color} relative overflow-hidden shadow-lg transition-all group-hover:h-4`}
                       >
                         <motion.div
-                          animate={{ opacity: [0.5, 1, 0.5] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 bg-white/20 rounded-full shimmer"
+                          animate={{ x: ['0%', '100%'] }}
+                          transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                        ></motion.div>
+                        <motion.div
+                          animate={{ opacity: [0.4, 0.8, 0.4] }}
+                          transition={{ duration: 2.5, repeat: Infinity }}
+                          className="absolute inset-0 rounded-full"
+                          style={{
+                            boxShadow: `0 0 20px rgba(159, 122, 234, 0.8)`
+                          }}
                         ></motion.div>
                       </motion.div>
                     </motion.div>

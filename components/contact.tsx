@@ -235,23 +235,20 @@ export default function Contact() {
 
         {/* Footer */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center pt-16 border-t border-border/20"
+          className="text-center py-8 border-t border-border/20"
         >
-          <p className="text-muted-foreground text-sm">
+          <p className="text-xs text-muted-foreground/80">
             Designed & Developed with <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
               className="inline-block text-red-500 mx-1"
             >
               ❤️
-            </motion.span> by Anjana
-          </p>
-          <p className="text-xs text-muted-foreground/60 mt-1">
-            © 2026 Anjana Unni P. All rights reserved.
+            </motion.span> by Anjana — © 2026 All rights reserved
           </p>
         </motion.div>
       </div>

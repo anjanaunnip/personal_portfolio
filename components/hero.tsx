@@ -1,11 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
+  const handleViewWork = () => {
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const achievements = [
-    { number: '10+', label: 'Projects Completed' },
+    { number: '6', label: 'Projects Built' },
     { number: 'MCA', label: 'Graduate' },
     { number: 'Full Stack', label: 'Developer' },
   ];
@@ -41,11 +48,9 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-6xl md:text-7xl font-bold mb-4 leading-tight"
+                className="text-5xl md:text-6xl font-bold mb-4 leading-tight"
               >
-                Anjana
-                <br />
-                <span className="gradient-text">Unni P</span>
+                <span className="gradient-text">Anjana Unni P</span>
               </motion.h1>
 
               {/* Animated Role */}
@@ -101,7 +106,10 @@ export default function Hero() {
               transition={{ delay: 0.9, duration: 0.8 }}
               className="flex flex-wrap gap-4 pt-4"
             >
-              <button className="px-8 py-3 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold flex items-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={handleViewWork}
+                className="px-8 py-3 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold flex items-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300 transform hover:scale-105"
+              >
                 <span>View My Work</span>
                 <ArrowRight size={18} />
               </button>
@@ -136,7 +144,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="hidden lg:flex items-center justify-center"
+            className="hidden lg:flex items-start justify-center pt-12"
           >
             <div className="relative w-full aspect-square max-w-lg">
               {/* Glowing Circle Background */}

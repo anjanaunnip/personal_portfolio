@@ -120,8 +120,8 @@ export default function About() {
                 whileHover={{ x: 10 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Education</p>
-                <p className="text-lg font-semibold text-foreground">MCA Graduate</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Location</p>
+                <p className="text-lg font-semibold text-foreground">Thrissur, Kerala, India</p>
               </motion.div>
 
               <motion.div

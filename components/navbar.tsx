@@ -34,11 +34,22 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center space-x-2"
+            className="flex items-center"
           >
-            <div className="text-2xl font-bold gradient-text">
-              ANJANA <span className="text-[#00d9ff]">/&gt;</span>
-            </div>
+            <motion.div
+              animate={{
+                boxShadow: [
+                  '0 0 20px rgba(159, 122, 234, 0.4)',
+                  '0 0 40px rgba(159, 122, 234, 0.6)',
+                  '0 0 20px rgba(159, 122, 234, 0.4)',
+                ],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="text-2xl font-bold bg-gradient-to-r from-[#9f7aea] via-[#00d9ff] to-[#9f7aea] bg-clip-text text-transparent"
+              style={{ fontFamily: 'var(--font-orbitron)' }}
+            >
+              &lt;Anjana /&gt;
+            </motion.div>
           </motion.div>
 
           {/* Desktop Navigation */}
