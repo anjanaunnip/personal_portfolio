@@ -85,7 +85,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00d9ff]/5 rounded-full blur-3xl"></div>
 

@@ -33,7 +33,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00d9ff]/5 rounded-full blur-3xl"></div>
 
@@ -114,41 +114,38 @@ export default function About() {
             whileHover={{ y: -10, boxShadow: '0 0 30px rgba(0, 217, 255, 0.3)' }}
             className="glassmorphism-dark p-8 rounded-xl transition-all duration-300"
           >
-            <h3 className="text-2xl font-bold mb-6 text-[#00d9ff]">Quick Overview</h3>
+            <h3 className="text-2xl font-bold mb-8 text-[#00d9ff]">Quick Overview</h3>
             <div className="space-y-6">
               <motion.div
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Location</p>
-                <p className="text-lg font-semibold text-foreground">Thrissur, Kerala, India</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">Education</p>
+                <p className="text-lg font-semibold text-foreground">BCA, MCA</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Role</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">Role</p>
                 <p className="text-lg font-semibold text-foreground">Full Stack Developer</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2">Interest</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">Interest</p>
                 <p className="text-lg font-semibold text-foreground">AI & Software Engineering</p>
               </motion.div>
 
               <motion.div
-                whileHover={{ x: 10 }}
+                whileHover={{ x: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-2 flex items-center space-x-2">
-                  <MapPin size={14} />
-                  <span>Location</span>
-                </p>
-                <p className="text-lg font-semibold text-foreground">Kerala, India</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">Location</p>
+                <p className="text-lg font-semibold text-foreground">Thrissur, Kerala, India</p>
               </motion.div>
             </div>
           </motion.div>

@@ -24,20 +24,20 @@ export default function Hero() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00d9ff]/5 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-4"
           >
             {/* Small Intro */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-lg text-muted-foreground"
+              className="text-lg text-muted-foreground pt-0"
             >
               Hello, I&apos;m
             </motion.div>
@@ -58,9 +58,9 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="h-20 flex items-center"
+                className="h-16 flex items-center"
               >
-                <div className="text-3xl md:text-4xl font-semibold gradient-text">
+                <div className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-[#00d9ff] via-[#0ea5e9] to-[#00d9ff] bg-clip-text text-transparent">
                   Full Stack Developer
                 </div>
               </motion.div>
@@ -144,7 +144,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="hidden lg:flex items-start justify-center pt-12"
+            className="hidden lg:flex items-start justify-center"
           >
             <div className="relative w-full aspect-square max-w-lg">
               {/* Glowing Circle Background */}

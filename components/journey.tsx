@@ -36,7 +36,7 @@ export default function Journey() {
   ];
 
   return (
-    <section id="journey" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="journey" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Background */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#9f7aea]/5 rounded-full blur-3xl"></div>
 

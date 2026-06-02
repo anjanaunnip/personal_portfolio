@@ -65,7 +65,7 @@ export default function Certifications() {
   };
 
   return (
-    <section id="certifications" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Background */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#9f7aea]/5 rounded-full blur-3xl"></div>
 

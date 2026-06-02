@@ -73,7 +73,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       {/* Background */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#9f7aea]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00d9ff]/5 rounded-full blur-3xl"></div>
@@ -239,16 +239,52 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center py-8 border-t border-border/20"
+          className="text-center py-12 border-t border-border/20"
         >
-          <p className="text-xs text-muted-foreground/80">
-            Designed & Developed with <motion.span
+          {/* Social Icons */}
+          <div className="flex items-center justify-center gap-6 mb-6">
+            {socialLinks.map((social, idx) => {
+              const Icon = social.icon;
+              return (
+                <motion.a
+                  key={idx}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-foreground/30 flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-foreground/60 transition-all"
+                  title={social.label}
+                >
+                  <Icon size={18} />
+                </motion.a>
+              );
+            })}
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex items-center justify-center gap-6 mb-6 flex-wrap">
+            {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((link, idx) => (
+              <motion.a
+                key={idx}
+                whileHover={{ color: '#00d9ff' }}
+                href={`#${link.toLowerCase()}`}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <p className="text-xs text-muted-foreground/60">
+            © 2026. Designed & Developed with <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
               className="inline-block text-red-500 mx-1"
             >
               ❤️
-            </motion.span> by Anjana — © 2026 All rights reserved
+            </motion.span> by Anjana
           </p>
         </motion.div>
       </div>
