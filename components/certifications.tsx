@@ -1,0 +1,162 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Award, ExternalLink } from 'lucide-react';
+
+export default function Certifications() {
+  const certifications = [
+    {
+      company: 'IBM',
+      title: 'Artificial Intelligence Fundamentals',
+      logo: '🟦',
+      color: 'from-[#0f62fe] to-[#004eeb]',
+    },
+    {
+      company: 'Google',
+      title: 'Cloud Computing Basics',
+      logo: '🔵',
+      color: 'from-[#4285f4] to-[#1f6feb]',
+    },
+    {
+      company: 'Infosys',
+      title: 'Python Programming Certification',
+      logo: '🟩',
+      color: 'from-[#00a878] to-[#05924c]',
+    },
+    {
+      company: 'Microsoft',
+      title: 'Azure Fundamentals',
+      logo: '☁️',
+      color: 'from-[#0078d4] to-[#005a9e]',
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+  };
+
+  return (
+    <section id="certifications" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+      {/* Background */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#9f7aea]/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center space-x-2 mb-4"
+          >
+            <Award size={20} className="text-[#9f7aea]" />
+            <span className="text-[#9f7aea] font-semibold">Professional Credentials</span>
+          </motion.div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            <span className="gradient-text">Certifications</span>
+          </h2>
+          <p className="text-muted-foreground text-lg">Industry-recognized credentials from leading organizations</p>
+        </motion.div>
+
+        {/* Certifications Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {certifications.map((cert, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ y: -15, rotateZ: 2 }}
+              className="group relative"
+            >
+              {/* Gradient Border */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} rounded-xl p-px opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                <div className="absolute inset-0 bg-background rounded-xl"></div>
+              </div>
+
+              {/* Content */}
+              <div className="relative glassmorphism-dark p-8 rounded-xl h-full flex flex-col items-center text-center transition-all duration-300">
+                {/* Logo */}
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="text-5xl mb-4"
+                >
+                  {cert.logo}
+                </motion.div>
+
+                {/* Company */}
+                <h3 className={`text-xl font-bold bg-gradient-to-r ${cert.color} bg-clip-text text-transparent mb-2`}>
+                  {cert.company}
+                </h3>
+
+                {/* Certification Title */}
+                <p className="text-foreground font-semibold mb-6 flex-grow">
+                  {cert.title}
+                </p>
+
+                {/* Verification Icon */}
+                <motion.a
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  href="#"
+                  className="p-2 bg-foreground/10 rounded-lg hover:bg-foreground/20 transition-colors"
+                  title="Verify Certificate"
+                >
+                  <ExternalLink size={18} className="text-[#00d9ff]" />
+                </motion.a>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Additional Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <div className="glassmorphism-dark p-8 rounded-xl max-w-2xl mx-auto">
+            <p className="text-foreground/80 mb-4">
+              Continuously learning and growing with industry-standard certifications to stay updated with the latest technologies and best practices.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="px-6 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all"
+            >
+              View All Certificates
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

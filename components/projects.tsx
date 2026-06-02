@@ -1,0 +1,177 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { Github, ExternalLink, Sparkles } from 'lucide-react';
+
+export default function Projects() {
+  const projects = [
+    {
+      title: 'AI Resume Screening Platform',
+      description: 'AI-powered recruitment platform that analyzes resumes, extracts candidate information and ranks applicants based on skills.',
+      gradient: 'from-[#9f7aea] to-[#6366f1]',
+      technologies: ['AI', 'Machine Learning', 'Django', 'React', 'MySQL'],
+      github: 'https://github.com',
+      demo: 'https://demo.example.com',
+      icon: '🤖',
+    },
+    {
+      title: 'AI Customer Support Chatbot',
+      description: 'Intelligent chatbot system using NLP to automate customer interactions and provide accurate responses.',
+      gradient: 'from-[#00d9ff] to-[#3b82f6]',
+      technologies: ['Next.js', 'Python', 'FastAPI', 'MongoDB', 'OpenAI API'],
+      github: 'https://github.com',
+      demo: 'https://demo.example.com',
+      icon: '💬',
+    },
+    {
+      title: 'E-Commerce Management System',
+      description: 'Complete marketplace platform with customer, seller and admin modules including authentication, product management, and order tracking.',
+      gradient: 'from-[#ec4899] to-[#f43f5e]',
+      technologies: ['Django', 'Bootstrap', 'MySQL', 'Authentication', 'Dashboard'],
+      github: 'https://github.com',
+      demo: 'https://demo.example.com',
+      icon: '🛍️',
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+  };
+
+  return (
+    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 relative">
+      {/* Background */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#00d9ff]/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center space-x-2 mb-4"
+          >
+            <Sparkles size={20} className="text-[#00d9ff]" />
+            <span className="text-[#00d9ff] font-semibold">Featured Works</span>
+          </motion.div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <p className="text-muted-foreground text-lg">Innovative solutions built with modern technologies</p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        >
+          {projects.map((project, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ y: -20 }}
+              className="group relative glassmorphism-dark rounded-xl overflow-hidden transition-all duration-300"
+            >
+              {/* Background Gradient */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+
+              {/* Content */}
+              <div className="relative p-8 flex flex-col h-full z-10">
+                {/* Icon & Title */}
+                <div className="mb-6">
+                  <div className="text-5xl mb-3">{project.icon}</div>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-[#00d9ff] transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                </div>
+
+                {/* Description */}
+                <p className="text-foreground/80 mb-6 flex-grow leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, i) => (
+                    <motion.span
+                      key={i}
+                      whileHover={{ scale: 1.05 }}
+                      className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${project.gradient} text-background`}
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-4 pt-4 border-t border-border/40">
+                  <motion.a
+                    whileHover={{ scale: 1.05, rotate: 5 }}
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 px-4 py-2 glassmorphism-dark rounded-lg hover:border-[#9f7aea]/50 transition-all duration-300"
+                  >
+                    <Github size={18} />
+                    <span className="text-sm font-semibold">Code</span>
+                  </motion.a>
+
+                  <motion.a
+                    whileHover={{ scale: 1.05, rotate: -5 }}
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300"
+                  >
+                    <ExternalLink size={18} />
+                    <span className="text-sm">Live</span>
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* View All Projects */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <button className="px-8 py-3 glassmorphism-dark text-foreground rounded-lg font-semibold hover:border-[#00d9ff]/50 transition-all duration-300 transform hover:scale-105">
+            View All Projects
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
