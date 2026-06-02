@@ -8,30 +8,30 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@anjana.dev',
-      href: 'mailto:hello@anjana.dev',
+      value: 'anjanaunnikrishnan178@gmail.com',
+      href: 'mailto:anjanaunnikrishnan178@gmail.com',
       color: 'from-[#00d9ff] to-[#0ea5e9]',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210',
+      value: '+91 7736906326',
+      href: 'tel:+917736906326',
       color: 'from-[#9f7aea] to-[#6366f1]',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Kerala, India',
+      value: 'Thrissur, Kerala, India',
       href: '#',
       color: 'from-[#ec4899] to-[#f43f5e]',
     },
   ];
 
   const socialLinks = [
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com', color: 'hover:text-[#0a66c2]' },
-    { icon: Github, label: 'GitHub', href: 'https://github.com', color: 'hover:text-[#333]' },
-    { icon: Mail, label: 'Email', href: 'mailto:hello@anjana.dev', color: 'hover:text-[#00d9ff]' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/anjanaunnip', color: 'hover:text-[#0a66c2]' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/anjanaunnip', color: 'hover:text-[#333]' },
+    { icon: Mail, label: 'Email', href: 'mailto:anjanaunnikrishnan178@gmail.com', color: 'hover:text-[#00d9ff]' },
   ];
 
   const containerVariants = {

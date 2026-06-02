@@ -6,28 +6,28 @@ import { Award, ExternalLink } from 'lucide-react';
 export default function Certifications() {
   const certifications = [
     {
-      company: 'IBM',
-      title: 'Artificial Intelligence Fundamentals',
-      logo: '🟦',
-      color: 'from-[#0f62fe] to-[#004eeb]',
+      company: 'Manifold Institute',
+      title: 'Advanced Python Programming for Competitive Coding',
+      logo: '🐍',
+      color: 'from-[#3776ab] to-[#ffd343]',
     },
     {
-      company: 'Google',
-      title: 'Cloud Computing Basics',
-      logo: '🔵',
-      color: 'from-[#4285f4] to-[#1f6feb]',
+      company: 'Cisco Networking Academy',
+      title: 'Virtual Internship in Cybersecurity',
+      logo: '🔐',
+      color: 'from-[#1ba0c8] to-[#0066cc]',
     },
     {
-      company: 'Infosys',
-      title: 'Python Programming Certification',
-      logo: '🟩',
-      color: 'from-[#00a878] to-[#05924c]',
+      company: 'IIT Bombay',
+      title: 'C Programming Training - eSpoken Tutorial Project',
+      logo: '✔️',
+      color: 'from-[#ff6b35] to-[#004e89]',
     },
     {
-      company: 'Microsoft',
-      title: 'Azure Fundamentals',
-      logo: '☁️',
-      color: 'from-[#0078d4] to-[#005a9e]',
+      company: 'NPTEL',
+      title: 'Introduction to Internet of Things',
+      logo: '🌐',
+      color: 'from-[#667eea] to-[#764ba2]',
     },
   ];
 

@@ -165,23 +165,38 @@ export default function Hero() {
                 className="absolute inset-12 rounded-full border-2 border-[#00d9ff]/20 glow-cyan"
               ></motion.div>
 
-              {/* Center Content */}
+              {/* Center Content - Professional Portrait */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="absolute inset-0 flex items-center justify-center"
+                className="absolute inset-0 flex items-center justify-center p-8"
               >
                 <motion.div
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="w-3/4 glassmorphism-dark p-6 rounded-lg text-center"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#9f7aea]/40 flex items-center justify-center"
                 >
-                  <div className="text-4xl font-bold gradient-text mb-2">&lt;/&gt;</div>
-                  <p className="text-sm text-foreground/80 leading-relaxed">
-                    I love turning ideas into real-world solutions
-                  </p>
+                  <img
+                    src="/anjana-portrait.jpg"
+                    alt="Anjana Unni P - Full Stack Developer"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                  {/* Overlay gradient effect */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/40 rounded-full"></div>
                 </motion.div>
+              </motion.div>
+
+              {/* Code Card Floating */}
+              <motion.div
+                animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity }}
+                className="absolute -bottom-4 -right-4 glassmorphism-dark p-4 rounded-lg w-48 z-20"
+              >
+                <div className="text-3xl font-bold gradient-text mb-2">&lt;/&gt;</div>
+                <p className="text-xs text-foreground/80 leading-relaxed">
+                  I love turning ideas into real-world solutions
+                </p>
               </motion.div>
             </div>
           </motion.div>

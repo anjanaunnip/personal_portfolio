@@ -6,31 +6,31 @@ import { Github, ExternalLink, Sparkles } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'AI Resume Screening Platform',
-      description: 'AI-powered recruitment platform that analyzes resumes, extracts candidate information and ranks applicants based on skills.',
+      title: 'AgriVision WeedSense',
+      description: 'Full-stack web application for real-time agricultural image analysis and precision recommendations using ML-based weed detection with YOLOv8 and OpenCV for accurate image processing.',
       gradient: 'from-[#9f7aea] to-[#6366f1]',
-      technologies: ['AI', 'Machine Learning', 'Django', 'React', 'MySQL'],
+      technologies: ['React.js', 'Django', 'YOLOv8', 'OpenCV', 'ML'],
       github: 'https://github.com',
       demo: 'https://demo.example.com',
-      icon: '🤖',
+      icon: '🌾',
     },
     {
-      title: 'AI Customer Support Chatbot',
-      description: 'Intelligent chatbot system using NLP to automate customer interactions and provide accurate responses.',
+      title: 'ReliefHub',
+      description: 'Full-stack web application for disaster relief coordination with donation management, request tracking, and secure payment integration using Razorpay with real-time transaction tracking.',
       gradient: 'from-[#00d9ff] to-[#3b82f6]',
-      technologies: ['Next.js', 'Python', 'FastAPI', 'MongoDB', 'OpenAI API'],
+      technologies: ['Django', 'Bootstrap', 'Razorpay', 'MySQL', 'REST APIs'],
       github: 'https://github.com',
       demo: 'https://demo.example.com',
-      icon: '💬',
+      icon: '🆘',
     },
     {
-      title: 'E-Commerce Management System',
-      description: 'Complete marketplace platform with customer, seller and admin modules including authentication, product management, and order tracking.',
+      title: 'TownLet',
+      description: 'Mobile application for community issue reporting and service requests with role-based modules for users and ward members to manage requests and notifications.',
       gradient: 'from-[#ec4899] to-[#f43f5e]',
-      technologies: ['Django', 'Bootstrap', 'MySQL', 'Authentication', 'Dashboard'],
+      technologies: ['Android', 'Java', 'XML', 'PHP', 'MySQL'],
       github: 'https://github.com',
       demo: 'https://demo.example.com',
-      icon: '🛍️',
+      icon: '🏘️',
     },
   ];
 
