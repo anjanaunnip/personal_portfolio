@@ -1,9 +1,27 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Phone, MapPin, SendIcon } from 'lucide-react';
+import { Mail, Linkedin, Github, Phone, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(false);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -117,7 +135,7 @@ export default function Contact() {
             })}
           </motion.div>
 
-          {/* Right - Connect Section */}
+          {/* Right - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -125,54 +143,95 @@ export default function Contact() {
             viewport={{ once: true }}
             className="glassmorphism-dark p-8 rounded-xl"
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">Connect With Me</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Send Me a Message</h3>
 
-            {/* Social Icons Grid */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
-              {socialLinks.map((social, idx) => {
-                const Icon = social.icon;
-                return (
-                  <motion.a
-                    key={idx}
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-4 rounded-lg border border-border/40 hover:border-[#00d9ff]/50 transition-all duration-300 flex items-center justify-center ${social.color}`}
-                    title={social.label}
-                  >
-                    <Icon size={24} />
-                  </motion.a>
-                );
-              })}
+            <form onSubmit={handleSubmit} className="space-y-4 mb-6">
+              {/* Name Input */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="relative"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  required
+                  className="w-full px-4 py-3 bg-background/50 border border-border/40 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#00d9ff]/50 transition-colors"
+                />
+              </motion.div>
+
+              {/* Email Input */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="relative"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                  required
+                  className="w-full px-4 py-3 bg-background/50 border border-border/40 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#00d9ff]/50 transition-colors"
+                />
+              </motion.div>
+
+              {/* Message Input */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="relative"
+              >
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your Message"
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 bg-background/50 border border-border/40 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#00d9ff]/50 transition-colors resize-none"
+                />
+              </motion.div>
+
+              {/* Submit Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300 disabled:opacity-50"
+              >
+                <Send size={18} />
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+              </motion.button>
+            </form>
+
+            {/* Social Links */}
+            <div className="pt-6 border-t border-border/40">
+              <p className="text-xs text-muted-foreground text-center mb-4">Connect on social media</p>
+              <div className="grid grid-cols-3 gap-4">
+                {socialLinks.map((social, idx) => {
+                  const Icon = social.icon;
+                  return (
+                    <motion.a
+                      key={idx}
+                      whileHover={{ scale: 1.1, rotate: 10 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 rounded-lg border border-border/40 hover:border-[#00d9ff]/50 transition-all duration-300 flex items-center justify-center ${social.color}`}
+                      title={social.label}
+                    >
+                      <Icon size={20} />
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
-
-            {/* Message Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full px-6 py-4 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300 mb-6"
-            >
-              <SendIcon size={20} />
-              <span>Send Message</span>
-            </motion.button>
-
-            {/* Info Text */}
-            <p className="text-sm text-muted-foreground text-center">
-              I typically respond within 24 hours. Looking forward to connecting with you!
-            </p>
           </motion.div>
         </div>
-
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-16"
-        ></motion.div>
 
         {/* Footer */}
         <motion.div
@@ -180,7 +239,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center pt-16 border-t border-border/20"
         >
           <p className="text-muted-foreground text-sm">
             Designed & Developed with <motion.span
@@ -191,7 +250,7 @@ export default function Contact() {
               ❤️
             </motion.span> by Anjana
           </p>
-          <p className="text-xs text-muted-foreground/60 mt-2">
+          <p className="text-xs text-muted-foreground/60 mt-1">
             © 2026 Anjana Unni P. All rights reserved.
           </p>
         </motion.div>

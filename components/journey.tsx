@@ -14,8 +14,8 @@ export default function Journey() {
     },
     {
       year: '2025',
-      title: 'Full Stack Development',
-      description: 'Software Development Intern at ODIN Technologies. Built real-world applications using React.js, Next.js, FastAPI, Django, and NestJS with WhatsApp integration and LLM features.',
+      title: 'Professional & Virtual Internships',
+      description: 'Software Development Intern at ODIN Technologies (Dec 2025-Mar 2026): Full-stack web development with React.js, Next.js, FastAPI, NestJS, WhatsApp integration, and LLM features. Cybersecurity Virtual Internship at Cisco Networking Academy (Jun-Aug 2025): Network security, threat detection, and defense strategies.',
       icon: Code2,
       position: 'right',
     },
@@ -154,9 +154,9 @@ export default function Journey() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
         >
           {[
-            { label: 'Years of Learning', value: '3+' },
-            { label: 'Projects Built', value: '10+' },
-            { label: 'Technologies Mastered', value: '20+' },
+            { label: 'Years of Learning', value: '6+' },
+            { label: 'Projects Built', value: '4' },
+            { label: 'Certifications Earned', value: '5' },
           ].map((stat, i) => (
             <motion.div
               key={i}

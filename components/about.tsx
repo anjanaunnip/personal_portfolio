@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Lightbulb, Code, Zap, Target, MapPin } from 'lucide-react';
 
@@ -69,10 +70,10 @@ export default function About() {
             <p className="text-foreground/80 leading-relaxed mb-6">
               MCA graduate passionate about building efficient, scalable and user-friendly software applications. I enjoy solving real-world problems through full stack development and AI-powered solutions.
             </p>
-            <button className="text-[#9f7aea] hover:text-[#00d9ff] font-semibold flex items-center space-x-2 transition-colors">
+            <Link href="/about" className="text-[#9f7aea] hover:text-[#00d9ff] font-semibold flex items-center space-x-2 transition-colors group/link">
               <span>Know More About Me</span>
-              <span className="group-hover:translate-x-2 transition-transform">→</span>
-            </button>
+              <span className="group-hover/link:translate-x-2 transition-transform">→</span>
+            </Link>
           </motion.div>
 
           {/* Card 2: Developer Mindset */}

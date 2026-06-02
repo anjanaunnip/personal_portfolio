@@ -13,8 +13,8 @@ export default function Page() {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
       <Projects />
+      <Skills />
       <Journey />
       <Certifications />
       <Contact />
