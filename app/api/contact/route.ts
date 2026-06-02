@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { PrismaClient } from '@prisma/client';
 import { z } from 'zod';
+import { Resend } from 'resend';
+
+const prisma = new PrismaClient();
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -14,45 +18,72 @@ export async function POST(request: NextRequest) {
     // Validate the input
     const { name, email, message } = contactSchema.parse(body);
 
-    console.log('[v0] Contact message received:', { name, email, messageLength: message.length });
+    console.log('[v0] ✓ Contact message received:', { name, email, messageLength: message.length });
 
-    // Send email notification via Resend (optional - requires Resend API key)
-    if (process.env.RESEND_API_KEY) {
+    // Save to database
+    let savedMessage;
+    try {
+      savedMessage = await prisma.contactMessage.create({
+        data: {
+          name,
+          email,
+          message,
+        },
+      });
+      console.log('[v0] ✓ Database saved successfully:', { id: savedMessage.id });
+    } catch (dbError) {
+      console.error('[v0] ✗ Database save failed:', dbError);
+      throw new Error(`Database error: ${dbError instanceof Error ? dbError.message : 'Unknown error'}`);
+    }
+
+    // Send email to your Gmail using Resend
+    const emailContent = `
+      <h2>New Portfolio Contact Message</h2>
+      <p><strong>From:</strong> ${name}</p>
+      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Date:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
+      <hr />
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, '<br>')}</p>
+    `;
+
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('[v0] ⚠ RESEND_API_KEY not set, skipping email');
+    } else {
       try {
-        const emailResponse = await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-          },
-          body: JSON.stringify({
-            from: 'Portfolio <onboarding@resend.dev>',
-            to: email,
-            subject: 'Message Received - Anjana Unni P',
-            html: `<h2>Thank you for reaching out!</h2><p>Hi ${name},</p><p>I received your message and will get back to you soon.</p><p>Best regards,<br/>Anjana Unni P</p>`,
-          }),
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        const emailResponse = await resend.emails.send({
+          from: 'Portfolio Contact <onboarding@resend.dev>',
+          to: 'anjanaunnikrishnan178@gmail.com',
+          subject: 'New Portfolio Contact Message',
+          html: emailContent,
         });
-        
-        if (emailResponse.ok) {
-          console.log('[v0] Email sent successfully');
+
+        if (emailResponse.error) {
+          console.error('[v0] ✗ Email sending failed:', emailResponse.error);
+          throw new Error(`Resend error: ${JSON.stringify(emailResponse.error)}`);
         }
+
+        console.log('[v0] ✓ Email sent successfully to Gmail:', { messageId: emailResponse.data?.id });
       } catch (emailError) {
-        console.log('[v0] Email sending failed:', emailError);
-        // Continue anyway - email is optional
+        console.error('[v0] ✗ Email error:', emailError instanceof Error ? emailError.message : String(emailError));
+        throw emailError;
       }
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Message received! Thank you for reaching out.',
+      message: 'Message sent successfully! Thank you for reaching out.',
       data: {
+        id: savedMessage.id,
         name,
         email,
-        timestamp: new Date().toISOString(),
+        createdAt: savedMessage.createdAt,
       },
     });
   } catch (error) {
-    console.error('[v0] Contact form error:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('[v0] ✗ Contact form error:', errorMessage);
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
@@ -71,8 +102,11 @@ export async function POST(request: NextRequest) {
       {
         success: false,
         message: 'Failed to send message. Please try again later.',
+        debug: process.env.NODE_ENV === 'development' ? errorMessage : undefined,
       },
       { status: 500 }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }
