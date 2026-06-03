@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Code2, Cpu, Zap, Brain } from 'lucide-react';
 
 export default function Hero() {
   const handleViewWork = () => {
@@ -86,16 +86,63 @@ export default function Hero() {
               I build scalable web applications and intelligent AI-powered solutions using modern technologies. Passionate about creating efficient, user-friendly software that solves real-world problems.
             </motion.p>
 
-            {/* Status Card */}
+            {/* Opportunity Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="glassmorphism-dark p-4 rounded-lg w-fit"
+              whileHover={{ y: -5, boxShadow: '0 0 30px rgba(0, 217, 255, 0.3)' }}
+              className="glassmorphism-dark p-6 rounded-xl w-full max-w-sm border border-[#00d9ff]/20 hover:border-[#00d9ff]/50 transition-all duration-300 backdrop-blur-xl"
             >
-              <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <p className="text-sm text-foreground">Currently open to Software Developer Opportunities</p>
+              {/* Status Header */}
+              <div className="flex items-center space-x-3 mb-4">
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="relative w-3 h-3"
+                >
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+                </motion.div>
+                <h3 className="font-semibold text-foreground">Currently Open To Opportunities</h3>
+              </div>
+
+              {/* Roles Grid */}
+              <div className="space-y-3">
+                <p className="text-xs text-muted-foreground uppercase tracking-wide font-medium">Seeking Roles</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <motion.div
+                    whileHover={{ x: 4, backgroundColor: 'rgba(0, 217, 255, 0.1)' }}
+                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
+                  >
+                    <Code2 size={16} className="text-[#00d9ff] flex-shrink-0" />
+                    <span className="text-sm text-foreground/90">Software Developer</span>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: 4, backgroundColor: 'rgba(159, 122, 234, 0.1)' }}
+                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
+                  >
+                    <Cpu size={16} className="text-[#9f7aea] flex-shrink-0" />
+                    <span className="text-sm text-foreground/90">Software Engineer</span>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: 4, backgroundColor: 'rgba(0, 217, 255, 0.1)' }}
+                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
+                  >
+                    <Zap size={16} className="text-[#00d9ff] flex-shrink-0" />
+                    <span className="text-sm text-foreground/90">Full Stack Developer</span>
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ x: 4, backgroundColor: 'rgba(159, 122, 234, 0.1)' }}
+                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
+                  >
+                    <Brain size={16} className="text-[#9f7aea] flex-shrink-0" />
+                    <span className="text-sm text-foreground/90">AI-Augmented Dev</span>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
 

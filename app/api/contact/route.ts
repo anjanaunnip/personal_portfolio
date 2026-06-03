@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
 import { z } from 'zod';
-import { Resend } from 'resend';
 
-const prisma = new PrismaClient();
+// Mark route as dynamic - prevent build-time execution
+export const dynamic = 'force-dynamic';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -13,6 +12,11 @@ const contactSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    // Import Prisma only at request time
+    const { PrismaClient } = await import('@prisma/client');
+    const { Resend } = await import('resend');
+
+    const prisma = new PrismaClient();
     const body = await request.json();
 
     // Validate the input
