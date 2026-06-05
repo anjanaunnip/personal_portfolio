@@ -87,7 +87,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Opportunity Card with CTA Buttons */}
-            <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center">
+            <div className="flex flex-col gap-6 items-start max-w-xl">
               {/* Opportunity Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -167,65 +167,13 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* CTA Buttons - Right Side */}
-              {/* Status Header */}
-              <div className="flex items-center space-x-3 mb-4">
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="relative w-3 h-3"
-                >
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-                </motion.div>
-                <h3 className="font-semibold text-foreground">Currently Open To Opportunities</h3>
-              </div>
-
-              {/* Roles Grid */}
-              <div className="space-y-3">
-                <p className="text-xs text-muted-foreground uppercase tracking-wide font-medium">Seeking Roles</p>
-                <div className="grid grid-cols-2 gap-2">
-                  <motion.div
-                    whileHover={{ x: 4, backgroundColor: 'rgba(0, 217, 255, 0.1)' }}
-                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
-                  >
-                    <Code2 size={16} className="text-[#00d9ff] flex-shrink-0" />
-                    <span className="text-sm text-foreground/90">Software Developer</span>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ x: 4, backgroundColor: 'rgba(159, 122, 234, 0.1)' }}
-                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
-                  >
-                    <Cpu size={16} className="text-[#9f7aea] flex-shrink-0" />
-                    <span className="text-sm text-foreground/90">Software Engineer</span>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ x: 4, backgroundColor: 'rgba(0, 217, 255, 0.1)' }}
-                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
-                  >
-                    <Zap size={16} className="text-[#00d9ff] flex-shrink-0" />
-                    <span className="text-sm text-foreground/90">Full Stack Developer</span>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ x: 4, backgroundColor: 'rgba(159, 122, 234, 0.1)' }}
-                    className="flex items-center space-x-2 p-2 rounded-lg transition-colors"
-                  >
-                    <Brain size={16} className="text-[#9f7aea] flex-shrink-0" />
-                    <span className="text-sm text-foreground/90">AI-Augmented Dev</span>
-                  </motion.div>
-                </div>
-              </div>
-
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
-                className="flex flex-col gap-4 w-full lg:w-auto"
+                className="flex flex-col sm:flex-row gap-4 w-full"
               >
-                <button 
+                <button
                   onClick={handleViewWork}
                   className="px-8 py-3 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300 transform hover:scale-105"
                 >
@@ -236,10 +184,19 @@ export default function Hero() {
                 <a
                   href="/resume/Anjana_Unni_P_Resume.pdf"
                   download="Anjana_Unni_P_Resume.pdf"
-                  className="px-8 py-3 glassmorphism-dark text-foreground rounded-lg font-semibold hover:border-[#00d9ff]/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 cursor-pointer"
+                  className="px-8 py-3 border border-[#00d9ff]/40 rounded-lg 
+                  font-semibold flex items-center justify-center gap-2
+                  hover:bg-[#00d9ff]/10
+                  hover:shadow-lg hover:shadow-[#00d9ff]/40
+                  transition-all duration-300"
                 >
+
                   <Download size={18} />
-                  <span>Download Resume</span>
+
+                  <span>
+                    Download Resume
+                  </span>
+
                 </a>
               </motion.div>
             </div>
