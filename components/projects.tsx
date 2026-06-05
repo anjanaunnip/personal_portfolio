@@ -387,8 +387,8 @@ overflow-hidden
 {/* fixed header */}
 
 <div className="
-h-16
-px-6
+h-12
+px-5
 flex
 items-center
 justify-between
@@ -397,7 +397,7 @@ border-white/10
 ">
 
 <h2 className="
-text-2xl
+text-xl
 font-bold
 gradient-text
 ">
