@@ -76,9 +76,9 @@ export default function Projects() {
  demo:null,
 
  screenshots:[
- '/projects/townlet/screen1.png',
- '/projects/townlet/screen2.png',
- '/projects/townlet/screen3.png'
+ '/projects/townlet/1.png',
+ '/projects/townlet/2.png',
+ '/projects/townlet/3.png'
  ],
 
  icon:'🏘️',
