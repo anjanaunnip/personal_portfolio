@@ -114,13 +114,17 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-3 pt-4">
                 <motion.a
                   whileHover={{ scale: 1.05 }}
-                  href="/ANJANA_RESUME.pdf"
-                  download
+                  href="/resume"
                   className="px-6 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold flex items-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all"
-                >
-                  <Download size={18} />
-                  <span>Download Resume</span>
-                </motion.a>
+                  >
+
+                  <Download size={18}/>
+
+                  <span>
+                  View Resume
+                  </span>
+
+                  </motion.a>
               </div>
             </motion.div>
           </motion.div>
