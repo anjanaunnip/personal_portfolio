@@ -1,9 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Sparkles } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, X } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Projects() {
+
+  const [openScreenshots,setOpenScreenshots] = useState(false);
+  const [selectedImages,setSelectedImages] = useState<string[]>([]);
+
   const projects = [
     {
       title: 'DevArchitect AI',
@@ -292,7 +297,14 @@ export default function Projects() {
 
 <motion.button
 
-whileHover={{scale:1.05}}
+whileHover={{
+ scale:1.05
+}}
+
+onClick={()=>{
+ setSelectedImages(project.screenshots);
+ setOpenScreenshots(true);
+}}
 
 className="
 px-4
@@ -312,19 +324,7 @@ View Screenshots
 </motion.button>
 
 )}
-  {!project.github && !project.demo && (
-
-    <span
-      className="
-      text-sm 
-      text-muted-foreground
-      italic
-      "
-    >
-      Private Academic Project
-    </span>
-
-  )}
+  
 
 
 </div>
@@ -333,7 +333,158 @@ View Screenshots
           ))}
         </motion.div>
 
+        {/* Screenshot Modal */}
 
+{openScreenshots && (
+
+<motion.div
+
+initial={{opacity:0}}
+animate={{opacity:1}}
+
+className="
+fixed
+inset-0
+z-[999]
+bg-black/80
+backdrop-blur-md
+flex
+items-center
+justify-center
+p-6
+"
+
+>
+
+
+<motion.div
+
+initial={{
+ scale:0.8,
+ y:50
+}}
+
+animate={{
+ scale:1,
+ y:0
+}}
+
+className="
+relative
+max-w-5xl
+w-full
+max-h-[90vh]
+bg-[#080b20]
+rounded-2xl
+border
+border-[#00d9ff]/40
+p-6
+overflow-y-auto
+"
+
+>
+
+
+<button
+
+onClick={()=>setOpenScreenshots(false)}
+
+className="
+absolute
+top-4
+right-4
+text-white
+hover:text-red-400
+"
+
+>
+
+<X size={28}/>
+
+</button>
+
+
+
+<h2
+
+className="
+text-3xl
+font-bold
+gradient-text
+mb-8
+text-center
+"
+
+>
+
+TownLet Screenshots
+
+</h2>
+
+
+
+<div
+
+className="
+grid
+grid-cols-1
+md:grid-cols-2
+gap-6
+"
+
+>
+
+
+{selectedImages.map((img,index)=>(
+
+
+<motion.img
+
+key={index}
+
+initial={{
+ opacity:0,
+ y:20
+}}
+
+animate={{
+ opacity:1,
+ y:0
+}}
+
+transition={{
+delay:index*0.05
+}}
+
+
+src={img}
+
+
+className="
+rounded-xl
+border
+border-[#9f7aea]/40
+shadow-lg
+hover:scale-105
+transition
+"
+
+/>
+
+
+))}
+
+
+</div>
+
+
+</motion.div>
+
+
+</motion.div>
+
+
+)}
       </div>
     </section>
   );
