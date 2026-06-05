@@ -194,7 +194,7 @@ export default function Hero() {
                   <Download size={18} />
 
                   <span>
-                    Download Resume
+                    View Resume
                   </span>
 
                 </a>
