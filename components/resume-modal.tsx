@@ -5,24 +5,24 @@ import { X, Download, FileText } from 'lucide-react';
 
 
 interface ResumeModalProps {
-  isOpen:boolean;
-  onClose:()=>void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 
 export default function ResumeModal({
-isOpen,
-onClose
-}:ResumeModalProps){
+  isOpen,
+  onClose
+}: ResumeModalProps) {
 
 
-if(!isOpen) return null;
+  if (!isOpen) return null;
 
 
-return(
+  return (
 
-<div
-className="
+    <div
+      className="
 fixed
 inset-0
 z-[999]
@@ -33,28 +33,28 @@ items-center
 justify-center
 p-6
 "
->
+    >
 
 
-<motion.div
+      <motion.div
 
-initial={{
-scale:0.9,
-opacity:0,
-y:30
-}}
+        initial={{
+          scale: 0.9,
+          opacity: 0,
+          y: 30
+        }}
 
-animate={{
-scale:1,
-opacity:1,
-y:0
-}}
+        animate={{
+          scale: 1,
+          opacity: 1,
+          y: 0
+        }}
 
-className="
+        className="
 relative
 w-full
 max-w-5xl
-h-[90vh]
+h-[92vh]
 flex
 flex-col
 rounded-3xl
@@ -68,13 +68,13 @@ shadow-[#00d9ff]/20
 overflow-hidden
 "
 
->
+      >
 
 
-{/* TOP BAR */}
+        {/* TOP BAR */}
 
-<div
-className="
+        <div
+          className="
 h-20
 px-6
 flex
@@ -83,19 +83,19 @@ justify-between
 border-b
 border-white/10
 "
->
+        >
 
 
-<div
-className="
+          <div
+            className="
 flex
 items-center
 gap-3
 "
->
+          >
 
-<div
-className="
+            <div
+              className="
 w-12
 h-12
 rounded-xl
@@ -107,77 +107,77 @@ items-center
 justify-center
 text-black
 "
->
+            >
 
-<FileText/>
+              <FileText />
 
-</div>
+            </div>
 
 
-<div>
+            <div>
 
-<h2
-className="
+              <h2
+                className="
 text-xl
 font-bold
 text-white
 "
->
-Resume Preview
-</h2>
+              >
+                Resume Preview
+              </h2>
 
 
-<p
-className="
+              <p
+                className="
 text-sm
 text-gray-400
 "
->
-Anjana Unni P • Full Stack Developer
-</p>
+              >
+                Anjana Unni P • Full Stack Developer
+              </p>
 
-</div>
+            </div>
 
-</div>
+          </div>
 
 
 
-<button
+          <button
 
-onClick={onClose}
+            onClick={onClose}
 
-className="
+            className="
 hover:text-red-400
 transition
 "
 
->
+          >
 
-<X/>
+            <X />
 
-</button>
-
-
-</div>
+          </button>
 
 
+        </div>
 
 
-{/* PDF PREVIEW AREA */}
 
-<div
-className="
+
+        {/* PDF PREVIEW AREA */}
+
+        <div
+          className="
 flex-1
-overflow-hidden
 bg-black/30
 px-8
 py-6
+overflow-hidden
 "
->
+        >
 
 
-<div
-className="
+          <div
+            className="
 h-full
 max-w-3xl
 mx-auto
@@ -186,37 +186,44 @@ overflow-hidden
 bg-white
 shadow-2xl
 "
->
+          >
 
 
-<iframe
+            <object
 
-src="/resume/ANJANAUNNIP.pdf#view=FitH"
+              data="/resume/ANJANAUNNIP.pdf#page=1&zoom=90"
 
-className="
+              type="application/pdf"
+
+              className="
 w-full
 h-full
-border-none
 "
 
->
-
-</iframe>
+            >
 
 
-</div>
+              <p className="text-black p-5">
+                Resume preview not available.
+              </p>
 
 
-</div>
+            </object>
+
+
+          </div>
+
+
+        </div>
 
 
 
 
-{/* FOOTER DOWNLOAD */}
+        {/* FOOTER DOWNLOAD */}
 
 
-<div
-className="
+        <div
+          className="
 h-24
 flex
 justify-center
@@ -225,15 +232,15 @@ border-t
 border-white/10
 bg-[#080b20]
 "
->
+        >
 
-<a
+          <a
 
-href="/resume/ANJANAUNNIP.pdf"
+            href="/resume/ANJANAUNNIP.pdf"
 
-download="ANJANAUNNIP.pdf"
+            download="ANJANAUNNIP.pdf"
 
-className="
+            className="
 px-8
 py-3
 rounded-full
@@ -249,25 +256,25 @@ hover:scale-105
 transition
 "
 
->
+          >
 
-<Download size={18}/>
+            <Download size={18} />
 
-Download Resume
+            Download Resume
 
-</a>
-
-
-
-</div>
+          </a>
 
 
 
-</motion.div>
+        </div>
 
 
-</div>
 
-)
+      </motion.div>
+
+
+    </div>
+
+  )
 
 }
