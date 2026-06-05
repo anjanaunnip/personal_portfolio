@@ -78,8 +78,19 @@ export default function Projects() {
  screenshots:[
  '/projects/townlet/1.png',
  '/projects/townlet/2.png',
- '/projects/townlet/3.png'
- ],
+ '/projects/townlet/3.png',
+ '/projects/townlet/4.png',
+ '/projects/townlet/5.png',
+ '/projects/townlet/6.png',
+ '/projects/townlet/7.png',
+ '/projects/townlet/8.png',
+ '/projects/townlet/9.png',
+ '/projects/townlet/10.png',
+ '/projects/townlet/11.png',
+ '/projects/townlet/12.png',
+ '/projects/townlet/13.png',
+ '/projects/townlet/14.png'
+],
 
  icon:'🏘️',
 },
