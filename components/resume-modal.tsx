@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { X, Download } from 'lucide-react';
+import { X, Download, FileText } from 'lucide-react';
 
 
 interface ResumeModalProps {
@@ -26,101 +26,129 @@ className="
 fixed
 inset-0
 z-[999]
-bg-black/80
-backdrop-blur-md
+bg-black/70
+backdrop-blur-lg
 flex
 items-center
 justify-center
-p-5
+p-6
 "
 >
 
 
 <motion.div
 
-initial={{scale:0.8,opacity:0}}
-animate={{scale:1,opacity:1}}
+initial={{
+scale:0.9,
+opacity:0,
+y:30
+}}
+
+animate={{
+scale:1,
+opacity:1,
+y:0
+}}
 
 className="
 relative
 w-full
-max-w-5xl
-h-[90vh]
-bg-[#080b20]
-rounded-2xl
+max-w-4xl
+h-[85vh]
+rounded-3xl
+bg-gradient-to-br
+from-[#080b20]
+to-[#111936]
 border
-border-[#00d9ff]/40
+border-[#00d9ff]/30
+shadow-2xl
+shadow-[#00d9ff]/20
 overflow-hidden
 "
 
 >
 
 
-{/* Header */}
+{/* TOP BAR */}
 
 <div
 className="
+h-20
+px-6
 flex
-justify-between
 items-center
-p-4
+justify-between
 border-b
 border-white/10
 "
 >
 
 
+<div
+className="
+flex
+items-center
+gap-3
+"
+>
+
+<div
+className="
+w-12
+h-12
+rounded-xl
+bg-gradient-to-r
+from-[#9f7aea]
+to-[#00d9ff]
+flex
+items-center
+justify-center
+text-black
+"
+>
+
+<FileText/>
+
+</div>
+
+
+<div>
+
 <h2
 className="
 text-xl
 font-bold
-gradient-text
+text-white
 "
 >
-Anjana Unni P Resume
+Resume Preview
 </h2>
 
 
-
-<div className="flex gap-3">
-
-
-<a
-
-href="/resume/ANJANAUNNIP.pdf"
-
-download="ANJANAUNNIP.pdf"
-
+<p
 className="
-px-4
-py-2
-rounded-lg
-bg-gradient-to-r
-from-[#9f7aea]
-to-[#00d9ff]
-text-black
-font-semibold
-flex
-gap-2
-items-center
+text-sm
+text-gray-400
 "
-
 >
+Anjana Unni P • Full Stack Developer
+</p>
 
-<Download size={16}/>
+</div>
 
-Download
-
-</a>
+</div>
 
 
 
 <button
+
 onClick={onClose}
+
 className="
-text-white
 hover:text-red-400
+transition
 "
+
 >
 
 <X/>
@@ -131,16 +159,33 @@ hover:text-red-400
 </div>
 
 
-</div>
 
 
+{/* PDF AREA */}
 
-{/* PDF VIEW */}
+
+<div
+className="
+h-[calc(100%-160px)]
+p-5
+bg-black/20
+"
+>
+
+
+<div
+className="
+h-full
+rounded-xl
+overflow-hidden
+bg-white
+"
+>
 
 
 <iframe
 
-src="/resume/ANJANAUNNIP.pdf"
+src="/resume/ANJANAUNNIP.pdf#toolbar=0"
 
 className="
 w-full
@@ -149,7 +194,66 @@ h-full
 
 >
 
+
 </iframe>
+
+
+</div>
+
+
+</div>
+
+
+
+
+{/* FOOTER DOWNLOAD */}
+
+
+<div
+className="
+h-20
+flex
+justify-center
+items-center
+border-t
+border-white/10
+"
+>
+
+
+<a
+
+href="/resume/ANJANAUNNIP.pdf"
+
+download="ANJANAUNNIP.pdf"
+
+className="
+px-8
+py-3
+rounded-full
+bg-gradient-to-r
+from-[#9f7aea]
+to-[#00d9ff]
+text-black
+font-bold
+flex
+items-center
+gap-2
+hover:scale-105
+transition
+"
+
+>
+
+<Download size={18}/>
+
+Download Resume
+
+</a>
+
+
+
+</div>
 
 
 
