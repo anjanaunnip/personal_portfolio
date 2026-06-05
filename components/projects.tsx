@@ -50,7 +50,7 @@ export default function Projects() {
       description: 'Disaster relief coordination platform with donation management, resource allocation, and real-time request tracking. Integrated Razorpay payment gateway with role-based dashboards for different user types.',
       gradient: 'from-[#00d9ff] to-[#3b82f6]',
       technologies: ['Django', 'Bootstrap', 'Razorpay', 'MySQL', 'REST APIs'],
-      github: 'https://github.com/anjanaunnip/reliefhub',
+      github: 'https://github.com/anjanaunnip/ReliefHub',
       demo: 'https://reliefhub.example.com',
       icon: '💝',
       featured: true,
