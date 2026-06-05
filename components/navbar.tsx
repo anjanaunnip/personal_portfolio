@@ -160,12 +160,11 @@ export default function Navbar() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume/Anjana_Unni_P_Resume.pdf"
-              download="Anjana_Unni_P_Resume.pdf"
+              href="/resume"
               className="px-6 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-full font-semibold text-sm flex items-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all cursor-pointer"
             >
               <Download size={16} />
-              <span>Resume</span>
+              <span>View Resume</span>
             </motion.a>
           </div>
 

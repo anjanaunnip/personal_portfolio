@@ -182,8 +182,7 @@ export default function Hero() {
                 </button>
 
                 <a
-                  href="/resume/Anjana_Unni_P_Resume.pdf"
-                  download="Anjana_Unni_P_Resume.pdf"
+                  href="/resume"
                   className="px-8 py-3 border border-[#00d9ff]/40 rounded-lg 
                   font-semibold flex items-center justify-center gap-2
                   hover:bg-[#00d9ff]/10
