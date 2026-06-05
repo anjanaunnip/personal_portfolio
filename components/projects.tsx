@@ -163,29 +163,118 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4 pt-4 border-t border-border/40">
-                  <motion.a
-                    whileHover={{ scale: 1.05, rotate: 5 }}
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 glassmorphism-dark rounded-lg hover:border-[#9f7aea]/50 transition-all duration-300"
-                  >
-                    <Github size={18} />
-                    <span className="text-sm font-semibold">Code</span>
-                  </motion.a>
+                {/* Links */}
+<div className="flex gap-4 pt-4 border-t border-border/40">
 
-                  <motion.a
-                    whileHover={{ scale: 1.05, rotate: -5 }}
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300"
-                  >
-                    <ExternalLink size={18} />
-                    <span className="text-sm">Live</span>
-                  </motion.a>
-                </div>
+
+  {project.github && (
+
+    <motion.a
+
+      whileHover={{
+        scale:1.05,
+        rotate:5
+      }}
+
+      href={project.github}
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+
+      className="
+      flex 
+      items-center 
+      space-x-2 
+      px-4 
+      py-2 
+      glassmorphism-dark 
+      rounded-lg 
+      hover:border-[#9f7aea]/50 
+      transition-all 
+      duration-300
+      "
+
+    >
+
+      <Github size={18}/>
+
+      <span className="text-sm font-semibold">
+        Code
+      </span>
+
+
+    </motion.a>
+
+  )}
+
+
+
+
+  {project.demo && (
+
+    <motion.a
+
+      whileHover={{
+        scale:1.05,
+        rotate:-5
+      }}
+
+      href={project.demo}
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+
+      className="
+      flex 
+      items-center 
+      space-x-2 
+      px-4 
+      py-2 
+      bg-gradient-to-r 
+      from-[#9f7aea] 
+      to-[#00d9ff] 
+      text-background 
+      rounded-lg 
+      font-semibold 
+      hover:shadow-lg 
+      hover:shadow-[#9f7aea]/50 
+      transition-all 
+      duration-300
+      "
+
+    >
+
+      <ExternalLink size={18}/>
+
+      <span className="text-sm">
+        Live
+      </span>
+
+
+    </motion.a>
+
+  )}
+
+
+
+  {!project.github && !project.demo && (
+
+    <span
+      className="
+      text-sm 
+      text-muted-foreground
+      italic
+      "
+    >
+      Private Academic Project
+    </span>
+
+  )}
+
+
+</div>
               </div>
             </motion.div>
           ))}
