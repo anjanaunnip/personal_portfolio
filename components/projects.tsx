@@ -8,6 +8,7 @@ export default function Projects() {
 
   const [openScreenshots,setOpenScreenshots] = useState(false);
   const [selectedImages,setSelectedImages] = useState<string[]>([]);
+  const [projectTitle,setProjectTitle] = useState('');
 
   const projects = [
     {
