@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, X } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Projects() {
