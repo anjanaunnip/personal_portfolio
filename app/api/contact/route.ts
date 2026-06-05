@@ -9,14 +9,14 @@ const contactSchema = z.object({
   email: z.string().email('Invalid email address'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
-
+let prisma:any = null;
 export async function POST(request: NextRequest) {
   try {
     // Import Prisma only at request time
     const { PrismaClient } = await import('@prisma/client');
     const { Resend } = await import('resend');
 
-    const prisma = new PrismaClient();
+    prisma = new PrismaClient();
     const body = await request.json();
 
     // Validate the input
@@ -111,6 +111,12 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   } finally {
-    await prisma.$disconnect();
-  }
+
+ if(prisma){
+
+   await prisma.$disconnect();
+
+ }
+
+}
 }

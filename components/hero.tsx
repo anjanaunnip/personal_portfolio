@@ -94,7 +94,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
                 whileHover={{ y: -5 }}
-                className="relative w-full lg:w-auto lg:max-w-sm group"
+                className="relative w-full max-w-xl group"
               >
                 {/* Animated border glow */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#00e5ff] via-[#a855f7] to-[#00e5ff] opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-500 -z-10"></div>
