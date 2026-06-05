@@ -350,10 +350,7 @@ animate={{opacity:1}}
 
 className="
 fixed
-top-0
-left-0
-w-screen
-h-screen
+inset-0
 z-[999999]
 bg-[#020617]
 flex
@@ -364,67 +361,91 @@ justify-center
 >
 
 
-{/* close */}
+<motion.div
 
-<button
-onClick={()=>setOpenScreenshots(false)}
+initial={{scale:0.9,opacity:0}}
+animate={{scale:1,opacity:1}}
+transition={{duration:0.2}}
 
 className="
-absolute
-top-8
-right-10
-z-50
-text-white
-hover:text-red-400
+relative
+w-[430px]
+h-[600px]
+bg-[#070b22]
+rounded-2xl
+border
+border-cyan-500/40
+shadow-2xl
+flex
+flex-col
+overflow-hidden
 "
 
 >
 
-<X size={35}/>
 
-</button>
+{/* fixed header */}
 
+<div className="
+h-12
+px-5
+flex
+items-center
+justify-between
+border-b
+border-white/10
+">
 
-
-{/* title */}
-
-<h2
-
-className="
-absolute
-top-8
-left-1/2
--translate-x-1/2
-text-3xl
+<h2 className="
+text-xl
 font-bold
 gradient-text
-"
-
->
-
+">
 {projectTitle}
-
 </h2>
 
 
+<button
+onClick={()=>setOpenScreenshots(false)}
+className="
+text-white
+hover:text-red-400
+"
+>
+<X size={28}/>
+</button>
 
-{/* left */}
+
+</div>
+
+
+
+{/* Image area */}
+
+<div className="
+relative
+flex-1
+flex
+items-center
+justify-center
+overflow-hidden
+">
+
 
 <button
 
-onClick={()=>
-setCurrentImage(
+onClick={()=>setCurrentImage(
 currentImage===0
-?selectedImages.length-1
-:currentImage-1
-)
-}
+? selectedImages.length-1
+: currentImage-1
+)}
 
 className="
 absolute
-left-20
-w-14
-h-14
+left-4
+z-10
+w-10
+h-10
 rounded-full
 bg-white/10
 hover:bg-white/20
@@ -435,58 +456,42 @@ justify-center
 
 >
 
-<ChevronLeft size={35}/>
+<ChevronLeft/>
 
 </button>
 
 
 
 
-{/* image */}
-
-<motion.img
-
-key={currentImage}
-
-initial={{opacity:0,scale:0.95}}
-
-animate={{opacity:1,scale:1}}
-
-transition={{duration:0.15}}
+<img
 
 src={selectedImages[currentImage]}
 
 className="
-max-h-[78vh]
-max-w-[75vw]
+max-h-[460px]
+max-w-[330px]
 object-contain
-rounded-xl
-shadow-2xl
+rounded-lg
 "
 
 />
 
 
 
-
-{/* right */}
-
 <button
 
-onClick={()=>
-setCurrentImage(
+onClick={()=>setCurrentImage(
 currentImage===selectedImages.length-1
 ?0
 :currentImage+1
-)
-}
-
+)}
 
 className="
 absolute
-right-20
-w-14
-h-14
+right-4
+z-10
+w-12
+h-12
 rounded-full
 bg-white/10
 hover:bg-white/20
@@ -497,29 +502,33 @@ justify-center
 
 >
 
-<ChevronRight size={35}/>
+<ChevronRight/>
 
 </button>
 
 
+</div>
 
-{/* count */}
 
-<div
 
-className="
-absolute
-bottom-8
+{/* fixed footer */}
+
+<div className="
+h-12
+flex
+items-center
+justify-center
 text-gray-400
-text-lg
-"
-
->
+border-t
+border-white/10
+">
 
 {currentImage+1} / {selectedImages.length}
 
 </div>
 
+
+</motion.div>
 
 </motion.div>
 
