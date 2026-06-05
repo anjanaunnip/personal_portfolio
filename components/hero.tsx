@@ -6,6 +6,7 @@ import ResumeModal from './resume-modal';
 import { useState } from 'react';
 
 export default function Hero() {
+  const [resumeOpen,setResumeOpen]=useState(false);
   const handleViewWork = () => {
     const projectsSection = document.querySelector('#projects');
     if (projectsSection) {
@@ -183,22 +184,29 @@ export default function Hero() {
                   <ArrowRight size={18} />
                 </button>
 
-                <a
-                  href="/resume"
-                  className="px-8 py-3 border border-[#00d9ff]/40 rounded-lg 
-                  font-semibold flex items-center justify-center gap-2
-                  hover:bg-[#00d9ff]/10
-                  hover:shadow-lg hover:shadow-[#00d9ff]/40
-                  transition-all duration-300"
-                >
+                <button
 
-                  <Download size={18} />
+onClick={()=>setResumeOpen(true)}
 
-                  <span>
-                    View Resume
-                  </span>
+className="
+px-8 py-3 
+border 
+border-[#00d9ff]/40 
+rounded-lg
+font-semibold
+flex
+items-center
+gap-2
+hover:bg-[#00d9ff]/10
+"
 
-                </a>
+>
+
+<Download size={18}/>
+
+View Resume
+
+</button>
               </motion.div>
             </div>
 
