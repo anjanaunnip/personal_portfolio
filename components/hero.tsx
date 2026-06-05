@@ -299,8 +299,16 @@ View Resume
               </motion.div>
             </div>
           </motion.div>
-        </div>
+                </div>
       </div>
+
+
+      <ResumeModal
+        isOpen={resumeOpen}
+        onClose={() => setResumeOpen(false)}
+      />
+
+
     </section>
   );
 }
