@@ -217,15 +217,15 @@ border-none
 
 <div
 className="
-h-20
+h-24
 flex
 justify-center
 items-center
 border-t
 border-white/10
+bg-[#080b20]
 "
 >
-
 
 <a
 
