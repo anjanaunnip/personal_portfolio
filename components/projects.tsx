@@ -277,7 +277,30 @@ export default function Projects() {
   )}
 
 
+{project.screenshots && (
 
+<motion.button
+
+whileHover={{scale:1.05}}
+
+className="
+px-4
+py-2
+rounded-lg
+bg-gradient-to-r
+from-[#ec4899]
+to-[#f43f5e]
+text-white
+font-semibold
+"
+
+>
+
+View Screenshots
+
+</motion.button>
+
+)}
   {!project.github && !project.demo && (
 
     <span
