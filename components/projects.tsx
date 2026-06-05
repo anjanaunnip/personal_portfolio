@@ -339,6 +339,8 @@ View Screenshots
 
         {/* Screenshot Modal */}
 
+{/* Screenshot Modal */}
+
 {openScreenshots && (
 
 <motion.div
@@ -350,12 +352,12 @@ className="
 fixed
 inset-0
 z-[999999]
-bg-black/95
-backdrop-blur-2xl
+bg-black/90
+backdrop-blur-xl
 flex
 items-center
 justify-center
-p-6
+p-5
 "
 
 >
@@ -365,77 +367,58 @@ p-6
 
 initial={{
  scale:0.8,
- y:50
+ opacity:0
 }}
 
 animate={{
  scale:1,
- y:0
+ opacity:1
 }}
 
 className="
 relative
-w-full
-max-w-6xl
-h-[90vh]
+w-[90%]
+max-w-md
 bg-[#080b20]
-rounded-2xl
+rounded-3xl
 border
 border-[#00d9ff]/40
 shadow-2xl
-overflow-hidden
-flex
-flex-col
+p-6
 "
 
 >
 
 
-{/* Fixed Modal Header */}
+{/* Header */}
 
-<div
-className="
-sticky
-top-0
-z-50
-bg-[#080b20]
-border-b
-border-[#00d9ff]/30
-px-8
-py-5
+<div className="
 flex
 items-center
 justify-between
-"
->
+mb-5
+">
 
-
-<h2
-className="
-text-3xl
+<h2 className="
+text-2xl
 font-bold
 gradient-text
-"
->
+">
 
-{projectTitle} Screenshots
+{projectTitle}
 
 </h2>
 
 
 <button
-
 onClick={()=>setOpenScreenshots(false)}
-
 className="
-text-white
 hover:text-red-400
 transition
 "
-
 >
 
-<X size={30}/>
+<X size={28}/>
 
 </button>
 
@@ -444,70 +427,123 @@ transition
 
 
 
-<div
+{/* Image */}
+
+<div className="
+relative
+flex
+items-center
+justify-center
+">
+
+
+{/* Left */}
+
+<button
+
+onClick={()=> 
+setCurrentImage(
+ currentImage===0 
+ ? selectedImages.length-1 
+ : currentImage-1
+)
+}
 
 className="
-flex-1
-overflow-y-auto
-p-8
-grid
-grid-cols-1
-md:grid-cols-2
-gap-8
+absolute
+-left-12
+bg-white/10
+p-3
+rounded-full
+hover:bg-white/20
 "
+
 >
 
+<ChevronLeft/>
 
+</button>
 
-
-{selectedImages.map((img,index)=>(
 
 
 <motion.img
 
-key={index}
+key={currentImage}
 
 initial={{
  opacity:0,
- y:20
+ x:40
 }}
 
 animate={{
  opacity:1,
- y:0
+ x:0
 }}
 
-transition={{
-delay:index*0.05
-}}
-
-
-src={img}
-
+src={selectedImages[currentImage]}
 
 className="
+max-h-[65vh]
 rounded-xl
+object-contain
 border
 border-[#9f7aea]/40
-shadow-lg
-hover:scale-105
-transition
 "
 
 />
 
 
-))}
+
+{/* Right */}
+
+<button
+
+onClick={()=>
+setCurrentImage(
+ currentImage===selectedImages.length-1
+ ? 0
+ : currentImage+1
+)
+}
+
+className="
+absolute
+-right-12
+bg-white/10
+p-3
+rounded-full
+hover:bg-white/20
+"
+
+>
+
+<ChevronRight/>
+
+</button>
 
 
 </div>
 
 
-</motion.div>
+
+{/* Count */}
+
+<p className="
+text-center
+text-sm
+text-gray-400
+mt-4
+">
+
+{currentImage+1} / {selectedImages.length}
+
+</p>
 
 
 </motion.div>
 
+
+</motion.div>
 
 )}
       </div>
