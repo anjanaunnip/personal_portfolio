@@ -53,8 +53,10 @@ y:0
 className="
 relative
 w-full
-max-w-4xl
-h-[85vh]
+max-w-5xl
+h-[90vh]
+flex
+flex-col
 rounded-3xl
 bg-gradient-to-br
 from-[#080b20]
