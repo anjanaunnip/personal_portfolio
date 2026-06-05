@@ -229,6 +229,10 @@ View Resume
           </motion.div>
         )}
       </div>
+      <ResumeModal
+isOpen={resumeOpen}
+onClose={()=>setResumeOpen(false)}
+/>
     </nav>
   );
 }
