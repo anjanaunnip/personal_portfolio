@@ -369,15 +369,16 @@ transition={{duration:0.2}}
 
 className="
 relative
-w-[520px]
-h-[720px]
+w-[430px]
+h-[600px]
 bg-[#070b22]
-rounded-3xl
+rounded-2xl
 border
 border-cyan-500/40
 shadow-2xl
 flex
 flex-col
+overflow-hidden
 "
 
 >
