@@ -30,26 +30,93 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
+          {/* Premium AI Brand Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center"
+            whileHover={{
+              scale: 1.08,
+              rotate: 3,
+            }}
+            className="flex items-center gap-3 cursor-pointer"
           >
+
             <motion.div
               animate={{
                 boxShadow: [
-                  '0 0 20px rgba(159, 122, 234, 0.4)',
-                  '0 0 40px rgba(159, 122, 234, 0.6)',
-                  '0 0 20px rgba(159, 122, 234, 0.4)',
+                  "0 0 20px rgba(0,217,255,0.4)",
+                  "0 0 35px rgba(159,122,234,0.7)",
+                  "0 0 20px rgba(0,217,255,0.4)",
                 ],
               }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="text-2xl font-bold bg-gradient-to-r from-[#9f7aea] via-[#00d9ff] to-[#9f7aea] bg-clip-text text-transparent"
-              style={{ fontFamily: 'var(--font-orbitron)' }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="
+                relative
+                w-12
+                h-12
+                rounded-xl
+                bg-gradient-to-br
+                from-[#00d9ff]
+                via-[#6366f1]
+                to-[#9f7aea]
+                p-[2px]
+              "
             >
-              &lt;Anjana /&gt;
+
+              <div
+                className="
+                w-full
+                h-full
+                rounded-xl
+                bg-[#080b20]
+                flex
+                items-center
+                justify-center
+                "
+              >
+
+                <span
+                  className="
+                  text-xl
+                  font-black
+                  bg-gradient-to-r
+                  from-[#00d9ff]
+                  to-[#9f7aea]
+                  bg-clip-text
+                  text-transparent
+                  "
+                >
+                  &lt;/∞
+                </span>
+
+              </div>
+
             </motion.div>
+
+
+            <span
+              className="
+              hidden
+              md:block
+              tracking-[5px]
+              text-sm
+              font-bold
+              bg-gradient-to-r
+              from-[#00d9ff]
+              via-white
+              to-[#9f7aea]
+              bg-clip-text
+              text-transparent
+              "
+            >
+              NEXA
+            </span>
+
+
           </motion.div>
 
           {/* Desktop Navigation */}
