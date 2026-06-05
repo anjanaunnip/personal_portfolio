@@ -143,7 +143,7 @@ transition-all
 
 
                   <span>
-                    View Resume
+                    Download Resume
                   </span>
 
 
