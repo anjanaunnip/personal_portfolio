@@ -350,7 +350,10 @@ animate={{opacity:1}}
 
 className="
 fixed
-inset-0
+top-0
+left-0
+w-screen
+h-screen
 z-[999999]
 bg-[#020617]
 flex
@@ -361,90 +364,67 @@ justify-center
 >
 
 
-<motion.div
-
-initial={{scale:0.9,opacity:0}}
-animate={{scale:1,opacity:1}}
-transition={{duration:0.2}}
-
-className="
-relative
-w-[520px]
-h-[720px]
-bg-[#070b22]
-rounded-3xl
-border
-border-cyan-500/40
-shadow-2xl
-flex
-flex-col
-"
-
->
-
-
-{/* fixed header */}
-
-<div className="
-h-16
-px-6
-flex
-items-center
-justify-between
-border-b
-border-white/10
-">
-
-<h2 className="
-text-2xl
-font-bold
-gradient-text
-">
-{projectTitle}
-</h2>
-
+{/* close */}
 
 <button
 onClick={()=>setOpenScreenshots(false)}
-className="
-text-white
-hover:text-red-400
-"
->
-<X size={28}/>
-</button>
-
-
-</div>
-
-
-
-{/* Image area */}
-
-<div className="
-relative
-flex-1
-flex
-items-center
-justify-center
-overflow-hidden
-">
-
-
-<button
-
-onClick={()=>setCurrentImage(
-currentImage===0
-? selectedImages.length-1
-: currentImage-1
-)}
 
 className="
 absolute
-left-4
-z-10
-w-12
-h-12
+top-8
+right-10
+z-50
+text-white
+hover:text-red-400
+"
+
+>
+
+<X size={35}/>
+
+</button>
+
+
+
+{/* title */}
+
+<h2
+
+className="
+absolute
+top-8
+left-1/2
+-translate-x-1/2
+text-3xl
+font-bold
+gradient-text
+"
+
+>
+
+{projectTitle}
+
+</h2>
+
+
+
+{/* left */}
+
+<button
+
+onClick={()=>
+setCurrentImage(
+currentImage===0
+?selectedImages.length-1
+:currentImage-1
+)
+}
+
+className="
+absolute
+left-20
+w-14
+h-14
 rounded-full
 bg-white/10
 hover:bg-white/20
@@ -455,42 +435,58 @@ justify-center
 
 >
 
-<ChevronLeft/>
+<ChevronLeft size={35}/>
 
 </button>
 
 
 
 
-<img
+{/* image */}
+
+<motion.img
+
+key={currentImage}
+
+initial={{opacity:0,scale:0.95}}
+
+animate={{opacity:1,scale:1}}
+
+transition={{duration:0.15}}
 
 src={selectedImages[currentImage]}
 
 className="
-max-h-[560px]
-max-w-[400px]
+max-h-[78vh]
+max-w-[75vw]
 object-contain
 rounded-xl
+shadow-2xl
 "
 
 />
 
 
 
+
+{/* right */}
+
 <button
 
-onClick={()=>setCurrentImage(
+onClick={()=>
+setCurrentImage(
 currentImage===selectedImages.length-1
 ?0
 :currentImage+1
-)}
+)
+}
+
 
 className="
 absolute
-right-4
-z-10
-w-12
-h-12
+right-20
+w-14
+h-14
 rounded-full
 bg-white/10
 hover:bg-white/20
@@ -501,33 +497,29 @@ justify-center
 
 >
 
-<ChevronRight/>
+<ChevronRight size={35}/>
 
 </button>
 
 
-</div>
 
+{/* count */}
 
+<div
 
-{/* fixed footer */}
-
-<div className="
-h-12
-flex
-items-center
-justify-center
+className="
+absolute
+bottom-8
 text-gray-400
-border-t
-border-white/10
-">
+text-lg
+"
+
+>
 
 {currentImage+1} / {selectedImages.length}
 
 </div>
 
-
-</motion.div>
 
 </motion.div>
 
