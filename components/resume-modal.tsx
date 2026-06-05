@@ -1,246 +1,228 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { X, Download, FileText } from 'lucide-react';
+import {
+  ArrowLeft,
+  Download,
+  FileText
+} from 'lucide-react';
 
 
 interface ResumeModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen:boolean;
+  onClose:()=>void;
 }
 
 
 export default function ResumeModal({
   isOpen,
   onClose
-}: ResumeModalProps) {
+}:ResumeModalProps){
 
 
-  if (!isOpen) return null;
+if(!isOpen) return null;
 
 
-  return (
+return(
 
-    <div
-      className="
+<div
+className="
 fixed
 inset-0
 z-[999]
 bg-black/70
-backdrop-blur-lg
+backdrop-blur-md
 flex
-items-center
 justify-center
-p-6
+items-start
+pt-10
+px-5
 "
-    >
+>
 
 
-      <motion.div
+<motion.div
 
-        initial={{
-          scale: 0.9,
-          opacity: 0,
-          y: 30
-        }}
+initial={{
+ opacity:0,
+ scale:0.85,
+ y:50
+}}
 
-        animate={{
-          scale: 1,
-          opacity: 1,
-          y: 0
-        }}
+animate={{
+ opacity:1,
+ scale:1,
+ y:0
+}}
 
-        className="
-relative
+transition={{
+ duration:0.35,
+ ease:'easeOut'
+}}
+
+
+className="
 w-full
-max-w-5xl
-h-[92vh]
-flex
-flex-col
+max-w-4xl
+h-[88vh]
 rounded-3xl
-bg-gradient-to-br
-from-[#080b20]
-to-[#111936]
+bg-[#080b20]
 border
 border-[#00d9ff]/30
 shadow-2xl
-shadow-[#00d9ff]/20
+shadow-cyan-500/20
 overflow-hidden
+flex
+flex-col
 "
 
-      >
+>
 
 
-        {/* TOP BAR */}
+{/* HEADER */}
 
-        <div
-          className="
+<div
+className="
 h-20
-px-6
 flex
 items-center
 justify-between
+px-6
 border-b
 border-white/10
 "
-        >
+>
 
 
-          <div
-            className="
+<button
+
+onClick={onClose}
+
+className="
+flex
+items-center
+gap-2
+text-gray-300
+hover:text-[#00d9ff]
+transition
+"
+
+>
+
+<ArrowLeft size={20}/>
+
+Back
+
+</button>
+
+
+
+<div
+className="
 flex
 items-center
 gap-3
 "
-          >
+>
 
-            <div
-              className="
-w-12
-h-12
-rounded-xl
-bg-gradient-to-r
-from-[#9f7aea]
-to-[#00d9ff]
-flex
-items-center
-justify-center
-text-black
-"
-            >
-
-              <FileText />
-
-            </div>
+<FileText className="text-[#00d9ff]" />
 
 
-            <div>
+<div>
 
-              <h2
-                className="
-text-xl
-font-bold
-text-white
-"
-              >
-                Resume Preview
-              </h2>
+<h2 className="font-bold text-white">
+Resume Preview
+</h2>
+
+<p className="text-xs text-gray-400">
+ANJANAUNNIP.pdf
+</p>
 
 
-              <p
-                className="
-text-sm
-text-gray-400
-"
-              >
-                Anjana Unni P • Full Stack Developer
-              </p>
-
-            </div>
-
-          </div>
+</div>
 
 
-
-          <button
-
-            onClick={onClose}
-
-            className="
-hover:text-red-400
-transition
-"
-
-          >
-
-            <X />
-
-          </button>
+</div>
 
 
-        </div>
+</div>
 
 
 
 
-        {/* PDF PREVIEW AREA */}
 
-        <div
-          className="
+
+{/* RESUME VIEW */}
+
+<div
+className="
 flex-1
+overflow-y-auto
 bg-black/30
-px-8
-py-6
-overflow-hidden
+p-6
 "
-        >
+>
 
 
-          <div
-            className="
-h-full
-max-w-3xl
+<div
+className="
 mx-auto
+max-w-3xl
+bg-white
 rounded-xl
 overflow-hidden
-bg-white
-shadow-2xl
 "
-          >
+>
 
 
-            <object
+<iframe
 
-              data="/resume/ANJANAUNNIP.pdf#page=1&zoom=90"
+src="/resume/ANJANAUNNIP.pdf#page=1&view=Fit"
 
-              type="application/pdf"
-
-              className="
+className="
 w-full
-h-full
+h-[850px]
+border-0
 "
 
-            >
+>
 
 
-              <p className="text-black p-5">
-                Resume preview not available.
-              </p>
+</iframe>
 
 
-            </object>
+</div>
 
 
-          </div>
-
-
-        </div>
+</div>
 
 
 
 
-        {/* FOOTER DOWNLOAD */}
 
 
-        <div
-          className="
-h-24
-flex
-justify-center
-items-center
+{/* DOWNLOAD */}
+
+<div
+className="
+h-20
 border-t
 border-white/10
-bg-[#080b20]
+flex
+items-center
+justify-center
 "
-        >
+>
 
-          <a
 
-            href="/resume/ANJANAUNNIP.pdf"
+<a
 
-            download="ANJANAUNNIP.pdf"
+href="/resume/ANJANAUNNIP.pdf"
 
-            className="
+download="ANJANAUNNIP.pdf"
+
+
+className="
 px-8
 py-3
 rounded-full
@@ -256,25 +238,28 @@ hover:scale-105
 transition
 "
 
-          >
-
-            <Download size={18} />
-
-            Download Resume
-
-          </a>
+>
 
 
+<Download size={18}/>
 
-        </div>
+Download Resume
+
+
+</a>
 
 
 
-      </motion.div>
+</div>
 
 
-    </div>
 
-  )
+</motion.div>
+
+
+</div>
+
+
+)
 
 }
