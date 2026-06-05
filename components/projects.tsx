@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Sparkles } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, X } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Projects() {
   const projects = [
