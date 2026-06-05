@@ -297,7 +297,14 @@ export default function Projects() {
 
 <motion.button
 
-whileHover={{scale:1.05}}
+whileHover={{
+ scale:1.05
+}}
+
+onClick={()=>{
+ setSelectedImages(project.screenshots);
+ setOpenScreenshots(true);
+}}
 
 className="
 px-4
