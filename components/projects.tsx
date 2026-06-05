@@ -56,14 +56,33 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: 'TownLet',
-      description: 'Community issue reporting mobile application with role-based modules for residents and ward members. Enables efficient request management, tracking, and notifications with real-time status updates.',
-      gradient: 'from-[#ec4899] to-[#f43f5e]',
-      technologies: ['Android', 'Java', 'XML', 'PHP', 'MySQL'],
-      github: 'https://github.com/anjanaunnip/townlet',
-      demo: 'https://play.google.com/store/apps/details?id=com.townlet',
-      icon: '🏘️',
-    },
+ title:'TownLet',
+
+ description:
+ 'Community issue reporting mobile application that connects residents and ward members for reporting and tracking local issues. Includes complaint management, status updates, and role-based access.',
+
+ gradient:'from-[#ec4899] to-[#f43f5e]',
+
+ technologies:[
+ 'Android',
+ 'Java',
+ 'XML',
+ 'PHP',
+ 'MySQL'
+ ],
+
+ github:null,
+
+ demo:null,
+
+ screenshots:[
+ '/projects/townlet/screen1.png',
+ '/projects/townlet/screen2.png',
+ '/projects/townlet/screen3.png'
+ ],
+
+ icon:'🏘️',
+},
   ];
 
   const containerVariants = {
