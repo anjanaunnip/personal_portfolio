@@ -53,8 +53,10 @@ y:0
 className="
 relative
 w-full
-max-w-4xl
-h-[85vh]
+max-w-5xl
+h-[90vh]
+flex
+flex-col
 rounded-3xl
 bg-gradient-to-br
 from-[#080b20]
@@ -161,14 +163,15 @@ transition
 
 
 
-{/* PDF AREA */}
-
+{/* PDF PREVIEW AREA */}
 
 <div
 className="
-h-[calc(100%-160px)]
-p-5
-bg-black/20
+flex-1
+overflow-hidden
+bg-black/30
+px-8
+py-6
 "
 >
 
@@ -176,24 +179,27 @@ bg-black/20
 <div
 className="
 h-full
+max-w-3xl
+mx-auto
 rounded-xl
 overflow-hidden
 bg-white
+shadow-2xl
 "
 >
 
 
 <iframe
 
-src="/resume/ANJANAUNNIP.pdf#toolbar=0"
+src="/resume/ANJANAUNNIP.pdf#view=FitH"
 
 className="
 w-full
 h-full
+border-none
 "
 
 >
-
 
 </iframe>
 
@@ -211,15 +217,15 @@ h-full
 
 <div
 className="
-h-20
+h-24
 flex
 justify-center
 items-center
 border-t
 border-white/10
+bg-[#080b20]
 "
 >
-
 
 <a
 
