@@ -177,7 +177,7 @@ export default function Contact() {
                 exit={{ opacity: 0, y: -10 }}
                 className="mb-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm"
               >
-                Message sent successfully! Thank you for reaching out.
+                Message sent successfully 🚀 I'll get back to you soon!
               </motion.div>
             )}
 
