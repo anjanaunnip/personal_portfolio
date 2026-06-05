@@ -373,17 +373,50 @@ className="
 relative
 w-full
 max-w-6xl
-h-[80vh]
+h-[90vh]
 bg-[#080b20]
 rounded-2xl
 border
 border-[#00d9ff]/40
-p-8
-overflow-y-auto
 shadow-2xl
+overflow-hidden
+flex
+flex-col
 "
 
 >
+
+
+{/* Fixed Modal Header */}
+
+<div
+className="
+sticky
+top-0
+z-50
+bg-[#080b20]
+border-b
+border-[#00d9ff]/30
+px-8
+py-5
+flex
+items-center
+justify-between
+"
+>
+
+
+<h2
+className="
+text-3xl
+font-bold
+gradient-text
+"
+>
+
+{projectTitle} Screenshots
+
+</h2>
 
 
 <button
@@ -391,36 +424,19 @@ shadow-2xl
 onClick={()=>setOpenScreenshots(false)}
 
 className="
-absolute
-top-4
-right-4
 text-white
 hover:text-red-400
+transition
 "
 
 >
 
-<X size={28}/>
+<X size={30}/>
 
 </button>
 
 
-
-<h2
-
-className="
-text-3xl
-font-bold
-gradient-text
-mb-8
-text-center
-"
-
->
-
-TownLet Screenshots
-
-</h2>
+</div>
 
 
 
