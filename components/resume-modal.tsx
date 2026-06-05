@@ -168,10 +168,10 @@ transition
 <div
 className="
 flex-1
-overflow-hidden
 bg-black/30
 px-8
 py-6
+overflow-hidden
 "
 >
 
@@ -189,19 +189,26 @@ shadow-2xl
 >
 
 
-<iframe
+<object
 
-src="/resume/ANJANAUNNIP.pdf#view=FitH"
+data="/resume/ANJANAUNNIP.pdf#page=1&zoom=90"
+
+type="application/pdf"
 
 className="
 w-full
 h-full
-border-none
 "
 
 >
 
-</iframe>
+
+<p className="text-black p-5">
+Resume preview not available.
+</p>
+
+
+</object>
 
 
 </div>
