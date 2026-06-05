@@ -374,15 +374,16 @@ animate={{
 
 className="
 relative
-max-w-5xl
 w-full
-max-h-[75vh]
+max-w-6xl
+h-[80vh]
 bg-[#080b20]
 rounded-2xl
 border
 border-[#00d9ff]/40
 p-8
 overflow-y-auto
+shadow-2xl
 "
 
 >
