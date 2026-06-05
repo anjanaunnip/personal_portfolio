@@ -444,8 +444,8 @@ className="
 absolute
 left-4
 z-10
-w-12
-h-12
+w-10
+h-10
 rounded-full
 bg-white/10
 hover:bg-white/20
