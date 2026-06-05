@@ -6,29 +6,31 @@ import { Github, ExternalLink, Sparkles } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'Enterprise Knowledge Assistant',
-      description: 'AI-powered enterprise solution for intelligent document management and knowledge retrieval. Leverages advanced NLP and semantic search to help organizations quickly find and access critical business information.',
-      gradient: 'from-[#667eea] to-[#764ba2]',
-      technologies: ['Next.js', 'FastAPI', 'RAG', 'OpenAI', 'PostgreSQL', 'Vector DB'],
-      github: 'https://github.com',
-      demo: 'https://demo.example.com',
-      icon: '📚',
+      title: 'DevArchitect AI',
+      description:
+        'AI-powered software engineering platform that transforms natural language requirements into complete backend solutions. Generates database schemas, REST APIs, FastAPI modules, documentation, test cases, and Docker-ready project structures using advanced LLM workflows.',
+      gradient: 'from-[#00d9ff] to-[#9f7aea]',
+      technologies: [
+        'React.js',
+        'FastAPI',
+        'PostgreSQL',
+        'AI/LLM',
+        'LangChain',
+        'Docker',
+        'PyTest'
+      ],
+      github: 'https://github.com/anjanaunnip/devarchitect-ai',
+      demo: 'https://devarchitect-ai.vercel.app',
+      icon: '🚀',
+      featured: true,
     },
-    {
-      title: 'SaaS Analytics Dashboard',
-      description: 'Comprehensive analytics and metrics visualization platform for SaaS businesses. Provides real-time insights into user behavior, revenue trends, and performance metrics with customizable dashboards.',
-      gradient: 'from-[#f093fb] to-[#f5576c]',
-      technologies: ['React.js', 'TypeScript', 'Chart.js', 'Node.js', 'MongoDB', 'WebSockets'],
-      github: 'https://github.com',
-      demo: 'https://demo.example.com',
-      icon: '📊',
-    },
+
     {
       title: 'AgriVision WeedSense',
       description: 'Full-stack web application for real-time agricultural image analysis and precision recommendations using ML-based weed detection with YOLOv8 and OpenCV for accurate image processing. Achieved 80-85% accuracy across 1000+ test images.',
       gradient: 'from-[#9f7aea] to-[#6366f1]',
       technologies: ['React.js', 'Django', 'YOLOv8', 'OpenCV', 'GIS', 'ML'],
-      github: 'https://github.com/anjanaunnip/agrivision-weedsense',
+      github: 'https://github.com/anjanaunnip/AgriVision-WeedSense',
       demo: 'https://agrivision.example.com',
       icon: '🌾',
       featured: true,
@@ -48,7 +50,7 @@ export default function Projects() {
       description: 'Disaster relief coordination platform with donation management, resource allocation, and real-time request tracking. Integrated Razorpay payment gateway with role-based dashboards for different user types.',
       gradient: 'from-[#00d9ff] to-[#3b82f6]',
       technologies: ['Django', 'Bootstrap', 'Razorpay', 'MySQL', 'REST APIs'],
-      github: 'https://github.com/anjanaunnip/reliefhub',
+      github: 'https://github.com/anjanaunnip/ReliefHub',
       demo: 'https://reliefhub.example.com',
       icon: '💝',
       featured: true,
