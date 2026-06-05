@@ -351,7 +351,9 @@ backdrop-blur-md
 flex
 items-center
 justify-center
-p-6
+px-6
+pt-28
+pb-10
 "
 
 >
