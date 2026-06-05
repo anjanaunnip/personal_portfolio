@@ -1,11 +1,13 @@
 'use client';
 
+
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Download, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-
+import ResumeModal from './resume-modal';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [resumeOpen,setResumeOpen] = useState(false);
 
   const navItems = [
     { label: 'Home', href: '#home' },
@@ -157,15 +159,37 @@ export default function Navbar() {
               <Linkedin size={20} />
             </motion.a>
 
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="/resume"
-              className="px-6 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-full font-semibold text-sm flex items-center space-x-2 hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all cursor-pointer"
-            >
-              <Download size={16} />
-              <span>View Resume</span>
-            </motion.a>
+            <motion.button
+
+onClick={()=>setResumeOpen(true)}
+
+whileHover={{ scale:1.05 }}
+
+className="
+px-6 py-2 
+bg-gradient-to-r 
+from-[#9f7aea] 
+to-[#00d9ff]
+text-background 
+rounded-full 
+font-semibold 
+text-sm 
+flex 
+items-center 
+space-x-2
+"
+
+>
+
+
+<Download size={16}/>
+
+<span>
+View Resume
+</span>
+
+
+</motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -205,6 +229,10 @@ export default function Navbar() {
           </motion.div>
         )}
       </div>
+      <ResumeModal
+isOpen={resumeOpen}
+onClose={()=>setResumeOpen(false)}
+/>
     </nav>
   );
 }
