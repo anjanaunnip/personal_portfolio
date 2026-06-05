@@ -56,14 +56,44 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: 'TownLet',
-      description: 'Community issue reporting mobile application with role-based modules for residents and ward members. Enables efficient request management, tracking, and notifications with real-time status updates.',
-      gradient: 'from-[#ec4899] to-[#f43f5e]',
-      technologies: ['Android', 'Java', 'XML', 'PHP', 'MySQL'],
-      github: 'https://github.com/anjanaunnip/townlet',
-      demo: 'https://play.google.com/store/apps/details?id=com.townlet',
-      icon: '🏘️',
-    },
+ title:'TownLet',
+
+ description:
+ 'Community issue reporting mobile application that connects residents and ward members for reporting and tracking local issues. Includes complaint management, status updates, and role-based access.',
+
+ gradient:'from-[#ec4899] to-[#f43f5e]',
+
+ technologies:[
+ 'Android',
+ 'Java',
+ 'XML',
+ 'PHP',
+ 'MySQL'
+ ],
+
+ github:null,
+
+ demo:null,
+
+ screenshots:[
+ '/projects/townlet/1.png',
+ '/projects/townlet/2.png',
+ '/projects/townlet/3.png',
+ '/projects/townlet/4.png',
+ '/projects/townlet/5.png',
+ '/projects/townlet/6.png',
+ '/projects/townlet/7.png',
+ '/projects/townlet/8.png',
+ '/projects/townlet/9.png',
+ '/projects/townlet/10.png',
+ '/projects/townlet/11.png',
+ '/projects/townlet/12.png',
+ '/projects/townlet/13.png',
+ '/projects/townlet/14.png'
+],
+
+ icon:'🏘️',
+},
   ];
 
   const containerVariants = {
@@ -163,29 +193,141 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4 pt-4 border-t border-border/40">
-                  <motion.a
-                    whileHover={{ scale: 1.05, rotate: 5 }}
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 glassmorphism-dark rounded-lg hover:border-[#9f7aea]/50 transition-all duration-300"
-                  >
-                    <Github size={18} />
-                    <span className="text-sm font-semibold">Code</span>
-                  </motion.a>
+                {/* Links */}
+<div className="flex gap-4 pt-4 border-t border-border/40">
 
-                  <motion.a
-                    whileHover={{ scale: 1.05, rotate: -5 }}
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#9f7aea] to-[#00d9ff] text-background rounded-lg font-semibold hover:shadow-lg hover:shadow-[#9f7aea]/50 transition-all duration-300"
-                  >
-                    <ExternalLink size={18} />
-                    <span className="text-sm">Live</span>
-                  </motion.a>
-                </div>
+
+  {project.github && (
+
+    <motion.a
+
+      whileHover={{
+        scale:1.05,
+        rotate:5
+      }}
+
+      href={project.github}
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+
+      className="
+      flex 
+      items-center 
+      space-x-2 
+      px-4 
+      py-2 
+      glassmorphism-dark 
+      rounded-lg 
+      hover:border-[#9f7aea]/50 
+      transition-all 
+      duration-300
+      "
+
+    >
+
+      <Github size={18}/>
+
+      <span className="text-sm font-semibold">
+        Code
+      </span>
+
+
+    </motion.a>
+
+  )}
+
+
+
+
+  {project.demo && (
+
+    <motion.a
+
+      whileHover={{
+        scale:1.05,
+        rotate:-5
+      }}
+
+      href={project.demo}
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+
+      className="
+      flex 
+      items-center 
+      space-x-2 
+      px-4 
+      py-2 
+      bg-gradient-to-r 
+      from-[#9f7aea] 
+      to-[#00d9ff] 
+      text-background 
+      rounded-lg 
+      font-semibold 
+      hover:shadow-lg 
+      hover:shadow-[#9f7aea]/50 
+      transition-all 
+      duration-300
+      "
+
+    >
+
+      <ExternalLink size={18}/>
+
+      <span className="text-sm">
+        Live
+      </span>
+
+
+    </motion.a>
+
+  )}
+
+
+{project.screenshots && (
+
+<motion.button
+
+whileHover={{scale:1.05}}
+
+className="
+px-4
+py-2
+rounded-lg
+bg-gradient-to-r
+from-[#ec4899]
+to-[#f43f5e]
+text-white
+font-semibold
+"
+
+>
+
+View Screenshots
+
+</motion.button>
+
+)}
+  {!project.github && !project.demo && (
+
+    <span
+      className="
+      text-sm 
+      text-muted-foreground
+      italic
+      "
+    >
+      Private Academic Project
+    </span>
+
+  )}
+
+
+</div>
               </div>
             </motion.div>
           ))}
