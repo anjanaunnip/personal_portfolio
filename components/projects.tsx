@@ -468,10 +468,10 @@ justify-center
 src={selectedImages[currentImage]}
 
 className="
-max-h-[560px]
-max-w-[400px]
+max-h-[460px]
+max-w-[330px]
 object-contain
-rounded-xl
+rounded-lg
 "
 
 />
