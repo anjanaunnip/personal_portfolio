@@ -161,14 +161,15 @@ transition
 
 
 
-{/* PDF AREA */}
-
+{/* PDF PREVIEW AREA */}
 
 <div
 className="
-h-[calc(100%-160px)]
-p-5
-bg-black/20
+flex-1
+overflow-hidden
+bg-black/30
+px-8
+py-6
 "
 >
 
@@ -176,24 +177,27 @@ bg-black/20
 <div
 className="
 h-full
+max-w-3xl
+mx-auto
 rounded-xl
 overflow-hidden
 bg-white
+shadow-2xl
 "
 >
 
 
 <iframe
 
-src="/resume/ANJANAUNNIP.pdf#toolbar=0"
+src="/resume/ANJANAUNNIP.pdf#view=FitH"
 
 className="
 w-full
 h-full
+border-none
 "
 
 >
-
 
 </iframe>
 
