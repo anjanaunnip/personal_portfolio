@@ -1,13 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, X } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Projects() {
 
   const [openScreenshots,setOpenScreenshots] = useState(false);
   const [selectedImages,setSelectedImages] = useState<string[]>([]);
+  const [currentImage,setCurrentImage] = useState(0);
+  const [projectTitle,setProjectTitle] = useState('');
 
   const projects = [
     {
@@ -303,6 +305,8 @@ whileHover={{
 
 onClick={()=>{
  setSelectedImages(project.screenshots);
+ setProjectTitle(project.title);
+ setCurrentImage(0);
  setOpenScreenshots(true);
 }}
 
@@ -335,6 +339,8 @@ View Screenshots
 
         {/* Screenshot Modal */}
 
+{/* Screenshot Modal */}
+
 {openScreenshots && (
 
 <motion.div
@@ -345,13 +351,11 @@ animate={{opacity:1}}
 className="
 fixed
 inset-0
-z-[999]
-bg-black/80
-backdrop-blur-md
+z-[999999]
+bg-[#020617]
 flex
 items-center
 justify-center
-p-6
 "
 
 >
@@ -359,130 +363,173 @@ p-6
 
 <motion.div
 
-initial={{
- scale:0.8,
- y:50
-}}
-
-animate={{
- scale:1,
- y:0
-}}
+initial={{scale:0.9,opacity:0}}
+animate={{scale:1,opacity:1}}
+transition={{duration:0.2}}
 
 className="
 relative
-max-w-5xl
-w-full
-max-h-[90vh]
-bg-[#080b20]
-rounded-2xl
+w-[520px]
+h-[720px]
+bg-[#070b22]
+rounded-3xl
 border
-border-[#00d9ff]/40
-p-6
-overflow-y-auto
+border-cyan-500/40
+shadow-2xl
+flex
+flex-col
 "
 
 >
+
+
+{/* fixed header */}
+
+<div className="
+h-16
+px-6
+flex
+items-center
+justify-between
+border-b
+border-white/10
+">
+
+<h2 className="
+text-2xl
+font-bold
+gradient-text
+">
+{projectTitle}
+</h2>
+
+
+<button
+onClick={()=>setOpenScreenshots(false)}
+className="
+text-white
+hover:text-red-400
+"
+>
+<X size={28}/>
+</button>
+
+
+</div>
+
+
+
+{/* Image area */}
+
+<div className="
+relative
+flex-1
+flex
+items-center
+justify-center
+overflow-hidden
+">
 
 
 <button
 
-onClick={()=>setOpenScreenshots(false)}
+onClick={()=>setCurrentImage(
+currentImage===0
+? selectedImages.length-1
+: currentImage-1
+)}
 
 className="
 absolute
-top-4
-right-4
-text-white
-hover:text-red-400
+left-4
+z-10
+w-12
+h-12
+rounded-full
+bg-white/10
+hover:bg-white/20
+flex
+items-center
+justify-center
 "
 
 >
 
-<X size={28}/>
+<ChevronLeft/>
 
 </button>
 
 
 
-<h2
+
+<img
+
+src={selectedImages[currentImage]}
 
 className="
-text-3xl
-font-bold
-gradient-text
-mb-8
-text-center
-"
-
->
-
-TownLet Screenshots
-
-</h2>
-
-
-
-<div
-
-className="
-grid
-grid-cols-1
-md:grid-cols-2
-gap-6
-"
-
->
-
-
-{selectedImages.map((img,index)=>(
-
-
-<motion.img
-
-key={index}
-
-initial={{
- opacity:0,
- y:20
-}}
-
-animate={{
- opacity:1,
- y:0
-}}
-
-transition={{
-delay:index*0.05
-}}
-
-
-src={img}
-
-
-className="
+max-h-[560px]
+max-w-[400px]
+object-contain
 rounded-xl
-border
-border-[#9f7aea]/40
-shadow-lg
-hover:scale-105
-transition
 "
 
 />
 
 
-))}
 
+<button
+
+onClick={()=>setCurrentImage(
+currentImage===selectedImages.length-1
+?0
+:currentImage+1
+)}
+
+className="
+absolute
+right-4
+z-10
+w-12
+h-12
+rounded-full
+bg-white/10
+hover:bg-white/20
+flex
+items-center
+justify-center
+"
+
+>
+
+<ChevronRight/>
+
+</button>
+
+
+</div>
+
+
+
+{/* fixed footer */}
+
+<div className="
+h-12
+flex
+items-center
+justify-center
+text-gray-400
+border-t
+border-white/10
+">
+
+{currentImage+1} / {selectedImages.length}
 
 </div>
 
 
 </motion.div>
 
-
 </motion.div>
-
 
 )}
       </div>
