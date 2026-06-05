@@ -8,6 +8,7 @@ export default function Projects() {
 
   const [openScreenshots,setOpenScreenshots] = useState(false);
   const [selectedImages,setSelectedImages] = useState<string[]>([]);
+  const [currentImage,setCurrentImage] = useState(0);
   const [projectTitle,setProjectTitle] = useState('');
 
   const projects = [
@@ -304,6 +305,8 @@ whileHover={{
 
 onClick={()=>{
  setSelectedImages(project.screenshots);
+ setProjectTitle(project.title);
+ setCurrentImage(0);
  setOpenScreenshots(true);
 }}
 
