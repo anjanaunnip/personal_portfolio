@@ -1,11 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Sparkles } from 'lucide-react';
 import { Github, ExternalLink, Sparkles, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Projects() {
+
+  const [openScreenshots,setOpenScreenshots] = useState(false);
+  const [selectedImages,setSelectedImages] = useState<string[]>([]);
+
   const projects = [
     {
       title: 'DevArchitect AI',
