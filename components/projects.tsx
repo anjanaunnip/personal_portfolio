@@ -312,19 +312,7 @@ View Screenshots
 </motion.button>
 
 )}
-  {!project.github && !project.demo && (
-
-    <span
-      className="
-      text-sm 
-      text-muted-foreground
-      italic
-      "
-    >
-      Private Academic Project
-    </span>
-
-  )}
+  
 
 
 </div>
