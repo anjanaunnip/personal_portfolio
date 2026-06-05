@@ -352,12 +352,10 @@ className="
 fixed
 inset-0
 z-[999999]
-bg-black/90
-backdrop-blur-xl
+bg-[#020617]
 flex
 items-center
 justify-center
-p-5
 "
 
 >
@@ -365,38 +363,36 @@ p-5
 
 <motion.div
 
-initial={{
- scale:0.8,
- opacity:0
-}}
-
-animate={{
- scale:1,
- opacity:1
-}}
+initial={{scale:0.9,opacity:0}}
+animate={{scale:1,opacity:1}}
+transition={{duration:0.2}}
 
 className="
 relative
-w-[90%]
-max-w-md
-bg-[#080b20]
+w-[520px]
+h-[720px]
+bg-[#070b22]
 rounded-3xl
 border
-border-[#00d9ff]/40
+border-cyan-500/40
 shadow-2xl
-p-6
+flex
+flex-col
 "
 
 >
 
 
-{/* Header */}
+{/* fixed header */}
 
 <div className="
+h-16
+px-6
 flex
 items-center
 justify-between
-mb-5
+border-b
+border-white/10
 ">
 
 <h2 className="
@@ -404,22 +400,18 @@ text-2xl
 font-bold
 gradient-text
 ">
-
 {projectTitle}
-
 </h2>
 
 
 <button
 onClick={()=>setOpenScreenshots(false)}
 className="
+text-white
 hover:text-red-400
-transition
 "
 >
-
 <X size={28}/>
-
 </button>
 
 
@@ -427,35 +419,38 @@ transition
 
 
 
-{/* Image */}
+{/* Image area */}
 
 <div className="
 relative
+flex-1
 flex
 items-center
 justify-center
+overflow-hidden
 ">
 
 
-{/* Left */}
-
 <button
 
-onClick={()=> 
-setCurrentImage(
- currentImage===0 
- ? selectedImages.length-1 
- : currentImage-1
-)
-}
+onClick={()=>setCurrentImage(
+currentImage===0
+? selectedImages.length-1
+: currentImage-1
+)}
 
 className="
 absolute
--left-12
-bg-white/10
-p-3
+left-4
+z-10
+w-12
+h-12
 rounded-full
+bg-white/10
 hover:bg-white/20
+flex
+items-center
+justify-center
 "
 
 >
@@ -466,53 +461,42 @@ hover:bg-white/20
 
 
 
-<motion.img
 
-key={currentImage}
-
-initial={{
- opacity:0,
- x:40
-}}
-
-animate={{
- opacity:1,
- x:0
-}}
+<img
 
 src={selectedImages[currentImage]}
 
 className="
-max-h-[65vh]
-rounded-xl
+max-h-[560px]
+max-w-[400px]
 object-contain
-border
-border-[#9f7aea]/40
+rounded-xl
 "
 
 />
 
 
 
-{/* Right */}
-
 <button
 
-onClick={()=>
-setCurrentImage(
- currentImage===selectedImages.length-1
- ? 0
- : currentImage+1
-)
-}
+onClick={()=>setCurrentImage(
+currentImage===selectedImages.length-1
+?0
+:currentImage+1
+)}
 
 className="
 absolute
--right-12
-bg-white/10
-p-3
+right-4
+z-10
+w-12
+h-12
 rounded-full
+bg-white/10
 hover:bg-white/20
+flex
+items-center
+justify-center
 "
 
 >
@@ -526,22 +510,24 @@ hover:bg-white/20
 
 
 
-{/* Count */}
+{/* fixed footer */}
 
-<p className="
-text-center
-text-sm
+<div className="
+h-12
+flex
+items-center
+justify-center
 text-gray-400
-mt-4
+border-t
+border-white/10
 ">
 
 {currentImage+1} / {selectedImages.length}
 
-</p>
+</div>
 
 
 </motion.div>
-
 
 </motion.div>
 
