@@ -344,17 +344,14 @@ animate={{opacity:1}}
 
 className="
 fixed
-top-0
-left-0
-w-screen
-h-screen
-z-[99999]
-bg-black/90
-backdrop-blur-xl
+inset-0
+z-[999999]
+bg-black/95
+backdrop-blur-2xl
 flex
 items-center
 justify-center
-p-8
+p-6
 "
 
 >
