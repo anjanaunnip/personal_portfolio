@@ -6,10 +6,10 @@ import { useState } from 'react';
 
 export default function Projects() {
 
-  const [openScreenshots,setOpenScreenshots] = useState(false);
-  const [selectedImages,setSelectedImages] = useState<string[]>([]);
-  const [currentImage,setCurrentImage] = useState(0);
-  const [projectTitle,setProjectTitle] = useState('');
+  const [openScreenshots, setOpenScreenshots] = useState(false);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [projectTitle, setProjectTitle] = useState('');
 
   const projects = [
     {
@@ -63,44 +63,44 @@ export default function Projects() {
       featured: true,
     },
     {
- title:'TownLet',
+      title: 'TownLet',
 
- description:
- 'Community issue reporting mobile application that connects residents and ward members for reporting and tracking local issues. Includes complaint management, status updates, and role-based access.',
+      description:
+        'Community issue reporting mobile application that connects residents and ward members for reporting and tracking local issues. Includes complaint management, status updates, and role-based access.',
 
- gradient:'from-[#ec4899] to-[#f43f5e]',
+      gradient: 'from-[#ec4899] to-[#f43f5e]',
 
- technologies:[
- 'Android',
- 'Java',
- 'XML',
- 'PHP',
- 'MySQL'
- ],
+      technologies: [
+        'Android',
+        'Java',
+        'XML',
+        'PHP',
+        'MySQL'
+      ],
 
- github:null,
+      github: null,
 
- demo:null,
+      demo: null,
 
- screenshots:[
- '/projects/townlet/1.png',
- '/projects/townlet/2.png',
- '/projects/townlet/3.png',
- '/projects/townlet/4.png',
- '/projects/townlet/5.png',
- '/projects/townlet/6.png',
- '/projects/townlet/7.png',
- '/projects/townlet/8.png',
- '/projects/townlet/9.png',
- '/projects/townlet/10.png',
- '/projects/townlet/11.png',
- '/projects/townlet/12.png',
- '/projects/townlet/13.png',
- '/projects/townlet/14.png'
-],
+      screenshots: [
+        '/projects/townlet/1.png',
+        '/projects/townlet/2.png',
+        '/projects/townlet/3.png',
+        '/projects/townlet/4.png',
+        '/projects/townlet/5.png',
+        '/projects/townlet/6.png',
+        '/projects/townlet/7.png',
+        '/projects/townlet/8.png',
+        '/projects/townlet/9.png',
+        '/projects/townlet/10.png',
+        '/projects/townlet/11.png',
+        '/projects/townlet/12.png',
+        '/projects/townlet/13.png',
+        '/projects/townlet/14.png'
+      ],
 
- icon:'🏘️',
-},
+      icon: '🏘️',
+    },
   ];
 
   const containerVariants = {
@@ -201,25 +201,25 @@ export default function Projects() {
 
                 {/* Links */}
                 {/* Links */}
-<div className="flex gap-4 pt-4 border-t border-border/40">
+                <div className="flex gap-4 pt-4 border-t border-border/40">
 
 
-  {project.github && (
+                  {project.github && (
 
-    <motion.a
+                    <motion.a
 
-      whileHover={{
-        scale:1.05,
-        rotate:5
-      }}
+                      whileHover={{
+                        scale: 1.05,
+                        rotate: 5
+                      }}
 
-      href={project.github}
+                      href={project.github}
 
-      target="_blank"
+                      target="_blank"
 
-      rel="noopener noreferrer"
+                      rel="noopener noreferrer"
 
-      className="
+                      className="
       flex 
       items-center 
       space-x-2 
@@ -232,38 +232,38 @@ export default function Projects() {
       duration-300
       "
 
-    >
+                    >
 
-      <Github size={18}/>
+                      <Github size={18} />
 
-      <span className="text-sm font-semibold">
-        Code
-      </span>
-
-
-    </motion.a>
-
-  )}
+                      <span className="text-sm font-semibold">
+                        Code
+                      </span>
 
 
+                    </motion.a>
+
+                  )}
 
 
-  {project.demo && (
 
-    <motion.a
 
-      whileHover={{
-        scale:1.05,
-        rotate:-5
-      }}
+                  {project.demo && (
 
-      href={project.demo}
+                    <motion.a
 
-      target="_blank"
+                      whileHover={{
+                        scale: 1.05,
+                        rotate: -5
+                      }}
 
-      rel="noopener noreferrer"
+                      href={project.demo}
 
-      className="
+                      target="_blank"
+
+                      rel="noopener noreferrer"
+
+                      className="
       flex 
       items-center 
       space-x-2 
@@ -281,36 +281,36 @@ export default function Projects() {
       duration-300
       "
 
-    >
+                    >
 
-      <ExternalLink size={18}/>
+                      <ExternalLink size={18} />
 
-      <span className="text-sm">
-        Live
-      </span>
-
-
-    </motion.a>
-
-  )}
+                      <span className="text-sm">
+                        Live
+                      </span>
 
 
-{project.screenshots && (
+                    </motion.a>
 
-<motion.button
+                  )}
 
-whileHover={{
- scale:1.05
-}}
 
-onClick={()=>{
- setSelectedImages(project.screenshots);
- setProjectTitle(project.title);
- setCurrentImage(0);
- setOpenScreenshots(true);
-}}
+                  {project.screenshots && (
 
-className="
+                    <motion.button
+
+                      whileHover={{
+                        scale: 1.05
+                      }}
+
+                      onClick={() => {
+                        setSelectedImages(project.screenshots);
+                        setProjectTitle(project.title);
+                        setCurrentImage(0);
+                        setOpenScreenshots(true);
+                      }}
+
+                      className="
 px-4
 py-2
 rounded-lg
@@ -321,17 +321,17 @@ text-white
 font-semibold
 "
 
->
+                    >
 
-View Screenshots
+                      View Screenshots
 
-</motion.button>
+                    </motion.button>
 
-)}
-  
+                  )}
 
 
-</div>
+
+                </div>
               </div>
             </motion.div>
           ))}
@@ -339,56 +339,69 @@ View Screenshots
 
         {/* Screenshot Modal */}
 
-{/* Screenshot Modal */}
+        {/* Screenshot Modal */}
 
-{openScreenshots && (
+        {/* Premium Screenshot Gallery */}
 
-<motion.div
+        {openScreenshots && (
 
-initial={{opacity:0}}
-animate={{opacity:1}}
+          <motion.div
 
-className="
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+
+            className="
 fixed
 inset-0
 z-[999999]
-bg-[#020617]
+bg-black/80
+backdrop-blur-xl
 flex
 items-center
 justify-center
+p-6
 "
 
->
+          >
 
 
-<motion.div
+            <motion.div
 
-initial={{scale:0.9,opacity:0}}
-animate={{scale:1,opacity:1}}
-transition={{duration:0.2}}
+              initial={{
+                scale: 0.85,
+                opacity: 0,
+                y: 50
+              }}
 
-className="
+              animate={{
+                scale: 1,
+                opacity: 1,
+                y: 0
+              }}
+
+              className="
 relative
-w-[430px]
-h-[600px]
-bg-[#070b22]
-rounded-2xl
+w-[90vw]
+max-w-6xl
+h-[85vh]
+rounded-3xl
+bg-[#020617]/90
 border
-border-cyan-500/40
-shadow-2xl
+border-cyan-400/30
+shadow-[0_0_60px_#00d9ff40]
+overflow-hidden
 flex
 flex-col
-overflow-hidden
 "
 
->
+            >
 
 
-{/* fixed header */}
+              {/* Header */}
 
-<div className="
-h-12
-px-5
+              <div className="
+h-20
+px-8
 flex
 items-center
 justify-between
@@ -396,143 +409,218 @@ border-b
 border-white/10
 ">
 
-<h2 className="
-text-xl
+
+                <div>
+
+                  <h2 className="
+text-3xl
 font-bold
 gradient-text
 ">
-{projectTitle}
-</h2>
+                    {projectTitle}
+                  </h2>
+
+                  <p className="text-gray-400 text-sm">
+                    Project Screenshots
+                  </p>
+
+                </div>
 
 
-<button
-onClick={()=>setOpenScreenshots(false)}
-className="
-text-white
-hover:text-red-400
+
+                <button
+                  onClick={() => setOpenScreenshots(false)}
+                  className="
+w-10
+h-10
+rounded-full
+bg-white/10
+flex
+items-center
+justify-center
+hover:bg-red-500
+transition
 "
->
-<X size={28}/>
-</button>
+                >
+
+                  <X />
+
+                </button>
 
 
-</div>
+              </div>
 
 
 
-{/* Image area */}
+              {/* Main Image */}
 
-<div className="
+              <div className="
 relative
 flex-1
 flex
 items-center
 justify-center
-overflow-hidden
 ">
 
 
-<button
+                <button
 
-onClick={()=>setCurrentImage(
-currentImage===0
-? selectedImages.length-1
-: currentImage-1
-)}
+                  onClick={() => setCurrentImage(
+                    currentImage === 0
+                      ? selectedImages.length - 1
+                      : currentImage - 1
+                  )}
 
-className="
+                  className="
 absolute
-left-4
-z-10
-w-10
-h-10
+left-8
+w-14
+h-14
 rounded-full
 bg-white/10
-hover:bg-white/20
+hover:bg-cyan-500
 flex
 items-center
 justify-center
+transition
 "
 
->
+                >
 
-<ChevronLeft/>
+                  <ChevronLeft />
 
-</button>
-
-
+                </button>
 
 
-<img
 
-src={selectedImages[currentImage]}
+                <motion.img
 
-className="
-max-h-[460px]
-max-w-[330px]
+                  key={currentImage}
+
+                  initial={{
+                    opacity: 0,
+                    x: 80
+                  }}
+
+                  animate={{
+                    opacity: 1,
+                    x: 0
+                  }}
+
+                  transition={{
+                    duration: 0.35
+                  }}
+
+                  src={selectedImages[currentImage]}
+
+
+                  className="
+max-h-[65vh]
+max-w-[75%]
 object-contain
-rounded-lg
+rounded-2xl
+border
+border-white/20
+shadow-2xl
 "
 
-/>
+                />
 
 
 
-<button
+                <button
 
-onClick={()=>setCurrentImage(
-currentImage===selectedImages.length-1
-?0
-:currentImage+1
-)}
+                  onClick={() => setCurrentImage(
+                    currentImage === selectedImages.length - 1
+                      ? 0
+                      : currentImage + 1
+                  )}
 
-className="
+                  className="
 absolute
-right-4
-z-10
-w-12
-h-12
+right-8
+w-14
+h-14
 rounded-full
 bg-white/10
-hover:bg-white/20
+hover:bg-cyan-500
 flex
 items-center
 justify-center
+transition
 "
 
->
+                >
 
-<ChevronRight/>
+                  <ChevronRight />
 
-</button>
-
-
-</div>
+                </button>
 
 
+              </div>
 
-{/* fixed footer */}
 
-<div className="
-h-12
+
+
+              {/* Footer */}
+
+              <div className="
+h-20
 flex
+flex-col
 items-center
 justify-center
-text-gray-400
+gap-3
 border-t
 border-white/10
 ">
 
-{currentImage+1} / {selectedImages.length}
 
-</div>
+                <p className="text-gray-400">
+
+                  {currentImage + 1} / {selectedImages.length}
+
+                </p>
 
 
-</motion.div>
+                <div className="flex gap-2">
 
-</motion.div>
+                  {selectedImages.map((_, i) => (
 
-)}
+                    <button
+
+                      key={i}
+
+                      onClick={() => setCurrentImage(i)}
+
+                      className={`
+w-3
+h-3
+rounded-full
+
+${currentImage === i
+                          ? 'bg-cyan-400'
+                          : 'bg-white/20'
+                        }
+
+`}
+
+                    />
+
+                  ))}
+
+                </div>
+
+
+              </div>
+
+
+            </motion.div>
+
+
+          </motion.div>
+
+        )}
       </div>
     </section>
   );
