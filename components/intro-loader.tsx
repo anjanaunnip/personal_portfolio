@@ -210,9 +210,9 @@ text-transparent
 
 
 <h1 className="
-text-5xl
+text-4xl
 font-black
-tracking-[8px]
+tracking-[7px]
 bg-gradient-to-r
 from-[#00d9ff]
 via-white
