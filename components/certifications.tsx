@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
 
-const certifications = [
+
     {
       company: 'Manifold Institute',
       title: 'Advanced Python Programming for Competitive Coding',
