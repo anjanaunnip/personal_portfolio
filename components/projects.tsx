@@ -4,16 +4,7 @@ import { motion } from 'framer-motion';
 import { Github, ExternalLink, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Projects() {
-
-  const [openScreenshots, setOpenScreenshots] = useState(false);
-  const [selectedImages, setSelectedImages] = useState<string[]>([]);
-  const [currentImage, setCurrentImage] = useState(0);
-  const [projectTitle, setProjectTitle] = useState('');
-
-  const [demoPopup,setDemoPopup] = useState(false);
-
-  const projects = [
+const projects = [
     {
       title: 'DevArchitect AI',
       description:
@@ -107,6 +98,17 @@ export default function Projects() {
       icon: '🏘️',
     },
   ];
+
+export default function Projects() {
+
+  const [openScreenshots, setOpenScreenshots] = useState(false);
+  const [selectedImages, setSelectedImages] = useState<string[]>([]);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [projectTitle, setProjectTitle] = useState('');
+
+  const [demoPopup,setDemoPopup] = useState(false);
+
+  
 
   const containerVariants = {
     hidden: { opacity: 0 },
