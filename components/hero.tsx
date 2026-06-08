@@ -15,7 +15,7 @@ export default function Hero() {
   };
 
   const achievements = [
-    { number: number:projects.length.toString(), label: 'Projects Built' },
+    { number: projects.length.toString(), label: 'Projects Built' },
     { number: 'MCA', label: 'Graduate' },
     { number: 'Full Stack', label: 'Developer' },
   ];
