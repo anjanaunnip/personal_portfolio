@@ -288,7 +288,7 @@ tracking-[5px]
 text-xs
 ">
 
-Loading Portfolio...
+Preparing Developer Workspace...
 
 </p>
 
