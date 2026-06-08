@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { GraduationCap, Code2, Zap, BookOpen } from 'lucide-react';
-
+import { projects } from './projects';
+import { certifications } from './certifications';
 export default function Journey() {
   const milestones = [
     {
