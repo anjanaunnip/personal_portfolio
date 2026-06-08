@@ -292,47 +292,45 @@ export default function Projects() {
 
                   {project.demo && (
 
-                    <motion.a
+                    <motion.button
 
-                      whileHover={{
-                        scale: 1.05,
-                        rotate: -5
-                      }}
+whileHover={{
+scale:1.05,
+rotate:-5
+}}
 
-                      href={project.demo}
+onClick={()=>{
+setDemoPopup(true);
+}}
 
-                      target="_blank"
+className="
+flex 
+items-center 
+space-x-2 
+px-4 
+py-2 
+bg-gradient-to-r 
+from-[#9f7aea] 
+to-[#00d9ff] 
+text-background 
+rounded-lg 
+font-semibold 
+hover:shadow-lg 
+hover:shadow-[#9f7aea]/50 
+transition-all 
+duration-300
+"
 
-                      rel="noopener noreferrer"
+>
 
-                      className="
-      flex 
-      items-center 
-      space-x-2 
-      px-4 
-      py-2 
-      bg-gradient-to-r 
-      from-[#9f7aea] 
-      to-[#00d9ff] 
-      text-background 
-      rounded-lg 
-      font-semibold 
-      hover:shadow-lg 
-      hover:shadow-[#9f7aea]/50 
-      transition-all 
-      duration-300
-      "
+<ExternalLink size={18}/>
 
-                    >
-
-                      <ExternalLink size={18} />
-
-                      <span className="text-sm">
-                        Live
-                      </span>
+<span className="text-sm">
+Live
+</span>
 
 
-                    </motion.a>
+</motion.button>
 
                   )}
 
