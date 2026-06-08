@@ -11,6 +11,8 @@ export default function Projects() {
   const [currentImage, setCurrentImage] = useState(0);
   const [projectTitle, setProjectTitle] = useState('');
 
+  const [demoPopup,setDemoPopup] = useState(false);
+
   const projects = [
     {
       title: 'DevArchitect AI',
