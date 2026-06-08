@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Code2, Cpu, Zap, Brain, Download } from 'lucide-react';
 import ResumeModal from './resume-modal';
 import { useState } from 'react';
-
+import { projects } from './projects';
 export default function Hero() {
   const [resumeOpen,setResumeOpen]=useState(false);
   const handleViewWork = () => {
@@ -15,7 +15,7 @@ export default function Hero() {
   };
 
   const achievements = [
-    { number: '6', label: 'Projects Built' },
+    { number: projects.length.toString(), label: 'Projects Built' },
     { number: 'MCA', label: 'Graduate' },
     { number: 'Full Stack', label: 'Developer' },
   ];

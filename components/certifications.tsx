@@ -3,9 +3,7 @@
 import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
 
-export default function Certifications() {
-
-  const certifications = [
+export const certifications=[
     {
       company: 'Manifold Institute',
       title: 'Advanced Python Programming for Competitive Coding',
@@ -43,6 +41,10 @@ export default function Certifications() {
       color: 'from-[#00b4d8] to-[#0096c7]',
     },
   ];
+
+export default function Certifications() {
+
+  
 
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -2,13 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { GraduationCap, Code2, Zap, BookOpen } from 'lucide-react';
-
+import { projects } from './projects';
+import { certifications } from './certifications';
 export default function Journey() {
   const milestones = [
     {
       year: '2024-26',
       title: 'MCA Graduate',
-      description: 'Master of Computer Applications from Vidya Academy of Science and Technology (CGPA: 9.14/10.0). Collaborated on 2 projects during internship. Strong foundation in software development and emerging technologies.',
+      description: 'Master of Computer Applications from Vidya Academy of Science and Technology (CGPA: 9.14/10.0). Collaborated on 2 projects during Academics. Strong foundation in software development and emerging technologies.',
       icon: GraduationCap,
       position: 'left',
     },
@@ -155,8 +156,8 @@ export default function Journey() {
         >
           {[
             { label: 'Years of Learning', value: '6+' },
-            { label: 'Projects Built', value: '4' },
-            { label: 'Certifications Earned', value: '5' },
+            { label: 'Projects Built', value: projects.length.toString() },
+            { label: 'Certifications Earned', value: certifications.length.toString() },
           ].map((stat, i) => (
             <motion.div
               key={i}
