@@ -157,7 +157,7 @@ export default function Journey() {
           {[
             { label: 'Years of Learning', value: '6+' },
             { label: 'Projects Built', value: '4' },
-            { label: 'Certifications Earned', value: '5' },
+            { label: 'Certifications Earned', value: certifications.length.toString() },
           ].map((stat, i) => (
             <motion.div
               key={i}
