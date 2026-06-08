@@ -28,10 +28,13 @@ export default function Projects() {
         'Docker',
         'PyTest'
       ],
-      github: 'https://github.com/anjanaunnip/devarchitect-ai',
-      demo: 'https://devarchitect-ai.vercel.app',
-      icon: '🚀',
-      featured: true,
+      github:null,
+      demo:null,
+
+      status:'🚧 Development In Progress',
+
+      icon:'🚀',
+      featured:true,
     },
 
     {
