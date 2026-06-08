@@ -184,6 +184,43 @@ export default function Projects() {
                   <h3 className="text-2xl font-bold text-foreground group-hover:text-[#00d9ff] transition-colors duration-300">
                     {project.title}
                   </h3>
+                  {project.status && (
+
+                    <motion.div
+
+                    animate={{
+                    opacity:[0.6,1,0.6]
+                    }}
+
+                    transition={{
+                    duration:2,
+                    repeat:Infinity
+                    }}
+
+                    className="
+                    mt-3
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    rounded-full
+                    text-xs
+                    font-semibold
+                    bg-gradient-to-r
+                    from-yellow-500/20
+                    to-orange-500/20
+                    text-yellow-300
+                    border
+                    border-yellow-400/30
+                    "
+
+                    >
+
+                    {project.status}
+
+                    </motion.div>
+
+                    )}
                 </div>
 
                 {/* Description */}
