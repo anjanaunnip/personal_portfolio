@@ -135,7 +135,7 @@ tracking-[8px]
 text-xs
 mb-8
 ">
-SYSTEM INITIALIZING...
+INITIALIZING PORTFOLIO...
 </p>
 
 
