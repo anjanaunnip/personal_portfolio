@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Code2, Cpu, Zap, Brain, Download } from 'lucide-react';
 import ResumeModal from './resume-modal';
 import { useState } from 'react';
-import IntroLoader from '@/components/intro-loader';
+
 export default function Hero() {
   const [resumeOpen,setResumeOpen]=useState(false);
   const handleViewWork = () => {
