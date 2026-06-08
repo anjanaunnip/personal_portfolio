@@ -140,17 +140,73 @@ SYSTEM INITIALIZING...
 
 
 
-<div className="
-text-6xl
-font-black
-mb-6
-gradient-text
-tracking-widest
-">
+{/* Portfolio Logo */}
 
-&lt;/&gt;
+<motion.div
+
+animate={{
+ boxShadow:[
+ "0 0 25px rgba(0,217,255,0.5)",
+ "0 0 50px rgba(159,122,234,0.8)",
+ "0 0 25px rgba(0,217,255,0.5)"
+ ]
+}}
+
+transition={{
+duration:3,
+repeat:Infinity
+}}
+
+className="
+mx-auto
+mb-8
+relative
+w-24
+h-24
+rounded-3xl
+bg-gradient-to-br
+from-[#00d9ff]
+via-[#6366f1]
+to-[#9f7aea]
+p-[3px]
+"
+
+>
+
+
+<div
+className="
+w-full
+h-full
+rounded-3xl
+bg-[#080b20]
+flex
+items-center
+justify-center
+"
+>
+
+<span
+className="
+text-4xl
+font-black
+bg-gradient-to-r
+from-[#00d9ff]
+to-[#9f7aea]
+bg-clip-text
+text-transparent
+"
+>
+
+&lt;/∞
+
+</span>
+
 
 </div>
+
+
+</motion.div>
 
 
 <h1 className="
