@@ -212,15 +212,16 @@ text-transparent
 <h1 className="
 text-5xl
 font-black
-tracking-[10px]
+tracking-[8px]
 bg-gradient-to-r
-from-cyan-400
-to-purple-500
+from-[#00d9ff]
+via-white
+to-[#9f7aea]
 text-transparent
 bg-clip-text
 ">
 
-ANJANA
+ANJANA UNNI P
 
 </h1>
 
