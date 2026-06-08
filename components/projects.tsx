@@ -11,6 +11,8 @@ export default function Projects() {
   const [currentImage, setCurrentImage] = useState(0);
   const [projectTitle, setProjectTitle] = useState('');
 
+  const [demoPopup,setDemoPopup] = useState(false);
+
   const projects = [
     {
       title: 'DevArchitect AI',
@@ -26,10 +28,13 @@ export default function Projects() {
         'Docker',
         'PyTest'
       ],
-      github: 'https://github.com/anjanaunnip/devarchitect-ai',
-      demo: 'https://devarchitect-ai.vercel.app',
-      icon: '🚀',
-      featured: true,
+      github:null,
+      demo:null,
+
+      status:'🚧 Development In Progress',
+
+      icon:'🚀',
+      featured:true,
     },
 
     {
@@ -179,6 +184,43 @@ export default function Projects() {
                   <h3 className="text-2xl font-bold text-foreground group-hover:text-[#00d9ff] transition-colors duration-300">
                     {project.title}
                   </h3>
+                  {project.status && (
+
+                    <motion.div
+
+                    animate={{
+                    opacity:[0.6,1,0.6]
+                    }}
+
+                    transition={{
+                    duration:2,
+                    repeat:Infinity
+                    }}
+
+                    className="
+                    mt-3
+                    inline-flex
+                    items-center
+                    px-4
+                    py-1
+                    rounded-full
+                    text-xs
+                    font-semibold
+                    bg-gradient-to-r
+                    from-yellow-500/20
+                    to-orange-500/20
+                    text-yellow-300
+                    border
+                    border-yellow-400/30
+                    "
+
+                    >
+
+                    {project.status}
+
+                    </motion.div>
+
+                    )}
                 </div>
 
                 {/* Description */}
@@ -250,47 +292,45 @@ export default function Projects() {
 
                   {project.demo && (
 
-                    <motion.a
+                    <motion.button
 
-                      whileHover={{
-                        scale: 1.05,
-                        rotate: -5
-                      }}
+whileHover={{
+scale:1.05,
+rotate:-5
+}}
 
-                      href={project.demo}
+onClick={()=>{
+setDemoPopup(true);
+}}
 
-                      target="_blank"
+className="
+flex 
+items-center 
+space-x-2 
+px-4 
+py-2 
+bg-gradient-to-r 
+from-[#9f7aea] 
+to-[#00d9ff] 
+text-background 
+rounded-lg 
+font-semibold 
+hover:shadow-lg 
+hover:shadow-[#9f7aea]/50 
+transition-all 
+duration-300
+"
 
-                      rel="noopener noreferrer"
+>
 
-                      className="
-      flex 
-      items-center 
-      space-x-2 
-      px-4 
-      py-2 
-      bg-gradient-to-r 
-      from-[#9f7aea] 
-      to-[#00d9ff] 
-      text-background 
-      rounded-lg 
-      font-semibold 
-      hover:shadow-lg 
-      hover:shadow-[#9f7aea]/50 
-      transition-all 
-      duration-300
-      "
+<ExternalLink size={18}/>
 
-                    >
-
-                      <ExternalLink size={18} />
-
-                      <span className="text-sm">
-                        Live
-                      </span>
+<span className="text-sm">
+Live
+</span>
 
 
-                    </motion.a>
+</motion.button>
 
                   )}
 
@@ -621,6 +661,109 @@ ${currentImage === i
           </motion.div>
 
         )}
+
+        {demoPopup && (
+
+<motion.div
+
+initial={{opacity:0}}
+animate={{opacity:1}}
+
+className="
+fixed
+inset-0
+z-[999999]
+bg-black/80
+backdrop-blur-lg
+flex
+items-center
+justify-center
+"
+
+>
+
+<motion.div
+
+initial={{
+scale:0.8,
+opacity:0
+}}
+
+animate={{
+scale:1,
+opacity:1
+}}
+
+className="
+w-[400px]
+bg-[#020617]
+rounded-2xl
+border
+border-cyan-400/40
+p-8
+text-center
+shadow-[0_0_40px_#00d9ff50]
+"
+
+>
+
+<div className="text-5xl mb-4">
+🚀
+</div>
+
+
+<h2 className="
+text-2xl
+font-bold
+gradient-text
+mb-3
+">
+
+Launching Soon
+
+</h2>
+
+
+<p className="
+text-gray-300
+leading-relaxed
+">
+
+Live deployment is currently being optimized.
+The demo will be available soon with a better production experience.
+
+</p>
+
+
+<button
+
+onClick={()=>setDemoPopup(false)}
+
+className="
+mt-6
+px-6
+py-2
+rounded-lg
+bg-gradient-to-r
+from-[#9f7aea]
+to-[#00d9ff]
+text-black
+font-semibold
+"
+
+>
+
+Got it
+
+</button>
+
+
+</motion.div>
+
+
+</motion.div>
+
+)}
       </div>
     </section>
   );
