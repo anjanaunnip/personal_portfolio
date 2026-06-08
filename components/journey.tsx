@@ -8,7 +8,7 @@ export default function Journey() {
     {
       year: '2024-26',
       title: 'MCA Graduate',
-      description: 'Master of Computer Applications from Vidya Academy of Science and Technology (CGPA: 9.14/10.0). Collaborated on 2 projects during internship. Strong foundation in software development and emerging technologies.',
+      description: 'Master of Computer Applications from Vidya Academy of Science and Technology (CGPA: 9.14/10.0). Collaborated on 2 projects during Academics. Strong foundation in software development and emerging technologies.',
       icon: GraduationCap,
       position: 'left',
     },
