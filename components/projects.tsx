@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Github, ExternalLink, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
-const projects = [
+export const projects = [
     {
       title: 'DevArchitect AI',
       description:
