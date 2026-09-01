@@ -106,8 +106,6 @@ export default function Projects() {
   const [currentImage, setCurrentImage] = useState(0);
   const [projectTitle, setProjectTitle] = useState('');
 
-  const [demoPopup, setDemoPopup] = useState(false);
-
 
 
   const containerVariants = {
@@ -294,16 +292,16 @@ export default function Projects() {
 
                   {project.demo && (
 
-                    <motion.button
+                    <motion.a
 
                       whileHover={{
                         scale: 1.05,
                         rotate: -5
                       }}
 
-                      onClick={() => {
-                        setDemoPopup(true);
-                      }}
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
 
                       className="
 flex 
@@ -332,7 +330,7 @@ duration-300
                       </span>
 
 
-                    </motion.button>
+                    </motion.a>
 
                   )}
 
@@ -664,108 +662,7 @@ ${currentImage === i
 
         )}
 
-        {demoPopup && (
 
-          <motion.div
-
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-
-            className="
-fixed
-inset-0
-z-[999999]
-bg-black/80
-backdrop-blur-lg
-flex
-items-center
-justify-center
-"
-
-          >
-
-            <motion.div
-
-              initial={{
-                scale: 0.8,
-                opacity: 0
-              }}
-
-              animate={{
-                scale: 1,
-                opacity: 1
-              }}
-
-              className="
-w-[400px]
-bg-[#020617]
-rounded-2xl
-border
-border-cyan-400/40
-p-8
-text-center
-shadow-[0_0_40px_#00d9ff50]
-"
-
-            >
-
-              <div className="text-5xl mb-4">
-                🚀
-              </div>
-
-
-              <h2 className="
-text-2xl
-font-bold
-gradient-text
-mb-3
-">
-
-                Launching Soon
-
-              </h2>
-
-
-              <p className="
-text-gray-300
-leading-relaxed
-">
-
-                Live deployment is currently being optimized.
-                The demo will be available soon with a better production experience.
-
-              </p>
-
-
-              <button
-
-                onClick={() => setDemoPopup(false)}
-
-                className="
-mt-6
-px-6
-py-2
-rounded-lg
-bg-gradient-to-r
-from-[#9f7aea]
-to-[#00d9ff]
-text-black
-font-semibold
-"
-
-              >
-
-                Got it
-
-              </button>
-
-
-            </motion.div>
-
-
-          </motion.div>
-
-        )}
       </div>
     </section>
   );
