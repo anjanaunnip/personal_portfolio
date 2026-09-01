@@ -152,10 +152,9 @@ export default function Journey() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
         >
           {[
-            { label: 'Years of Learning', value: '6+' },
             { label: 'Projects Built', value: projects.length.toString() },
             { label: 'Certifications Earned', value: certifications.length.toString() },
           ].map((stat, i) => (
