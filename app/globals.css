@@ -13,25 +13,25 @@
 }
 
 :root {
-  --background: #0a0e27;
-  --foreground: #e4e4e7;
-  --card: #1a1f3a;
-  --card-foreground: #e4e4e7;
-  --popover: #0a0e27;
-  --popover-foreground: #e4e4e7;
-  --primary: #9f7aea;
-  --primary-foreground: #0a0e27;
-  --secondary: #00d9ff;
-  --secondary-foreground: #0a0e27;
-  --muted: #2a2f4a;
-  --muted-foreground: #a1a1aa;
-  --accent: #00d9ff;
-  --accent-foreground: #0a0e27;
-  --destructive: #ff3b3b;
-  --destructive-foreground: #ffffff;
-  --border: #2a2f4a;
-  --input: #1a1f3a;
-  --ring: #9f7aea;
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --card: #172033;
+  --card-foreground: #e2e8f0;
+  --popover: #0f172a;
+  --popover-foreground: #e2e8f0;
+  --primary: #38bdf8;
+  --primary-foreground: #082f49;
+  --secondary: #1e293b;
+  --secondary-foreground: #cbd5e1;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #38bdf8;
+  --accent-foreground: #082f49;
+  --destructive: #f87171;
+  --destructive-foreground: #450a0a;
+  --border: #334155;
+  --input: #172033;
+  --ring: #38bdf8;
   --chart-1: #9f7aea;
   --chart-2: #00d9ff;
   --chart-3: #6366f1;
@@ -143,21 +143,17 @@
 }
 
 @layer utilities {
-  .glassmorphism {
-    @apply backdrop-blur-xl bg-white/10 border border-white/20;
-  }
-
+  .glassmorphism,
   .glassmorphism-dark {
-    @apply backdrop-blur-xl bg-[#1a1f3a]/40 border border-[#2a2f4a]/60;
+    @apply border border-border bg-card;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-[#9f7aea] via-[#00d9ff] to-[#9f7aea] bg-clip-text text-transparent;
+    @apply text-primary;
   }
 
   .gradient-border {
-    @apply relative;
-    background: linear-gradient(135deg, #9f7aea, #00d9ff) border-box;
+    @apply relative border border-border;
   }
 
   .glow-purple {
