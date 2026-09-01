@@ -34,7 +34,7 @@ export const projects = [
     gradient: 'from-[#9f7aea] to-[#6366f1]',
     technologies: ['React.js', 'Django', 'YOLOv8', 'OpenCV', 'GIS', 'ML'],
     github: 'https://github.com/anjanaunnip/AgriVision-WeedSense',
-    demo: 'https://agrivision-backend-zcmc.onrender.com/',
+    demo: 'https://agri-vision-weed-sense.vercel.app',
     icon: '🌾',
     featured: true,
   },
