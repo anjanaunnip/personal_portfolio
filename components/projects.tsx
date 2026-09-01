@@ -5,99 +5,99 @@ import { Github, ExternalLink, Sparkles, X, ChevronLeft, ChevronRight } from 'lu
 import { useState } from 'react';
 
 export const projects = [
-    {
-      title: 'DevArchitect AI',
-      description:
-        'AI-powered software engineering platform that transforms natural language requirements into complete backend solutions. Generates database schemas, REST APIs, FastAPI modules, documentation, test cases, and Docker-ready project structures using advanced LLM workflows.',
-      gradient: 'from-[#00d9ff] to-[#9f7aea]',
-      technologies: [
-        'React.js',
-        'FastAPI',
-        'PostgreSQL',
-        'AI/LLM',
-        'LangChain',
-        'Docker',
-        'PyTest'
-      ],
-      github:null,
-      demo:null,
+  {
+    title: 'DevArchitect AI',
+    description:
+      'AI-powered software engineering platform that transforms natural language requirements into complete backend solutions. Generates database schemas, REST APIs, FastAPI modules, documentation, test cases, and Docker-ready project structures using advanced LLM workflows.',
+    gradient: 'from-[#00d9ff] to-[#9f7aea]',
+    technologies: [
+      'React.js',
+      'FastAPI',
+      'PostgreSQL',
+      'AI/LLM',
+      'LangChain',
+      'Docker',
+      'PyTest'
+    ],
+    github: null,
+    demo: null,
 
-      status:'🚧 Development In Progress',
+    status: '🚧 Development In Progress',
 
-      icon:'🚀',
-      featured:true,
-    },
+    icon: '🚀',
+    featured: true,
+  },
 
-    {
-      title: 'AgriVision WeedSense',
-      description: 'Full-stack web application for real-time agricultural image analysis and precision recommendations using ML-based weed detection with YOLOv8 and OpenCV for accurate image processing. Achieved 80-85% accuracy across 1000+ test images.',
-      gradient: 'from-[#9f7aea] to-[#6366f1]',
-      technologies: ['React.js', 'Django', 'YOLOv8', 'OpenCV', 'GIS', 'ML'],
-      github: 'https://github.com/anjanaunnip/AgriVision-WeedSense',
-      demo: 'https://agrivision.example.com',
-      icon: '🌾',
-      featured: true,
-    },
-    {
-      title: 'AI-Powered FAQ Assistant',
-      description: 'Full-stack web application for managing FAQs with AI-based answer rewriting capability. Features complete CRUD operations, intelligent search, and semantic answer enhancement using modern AI text rewriting APIs.',
-      gradient: 'from-[#9f7aea] to-[#00d9ff]',
-      technologies: ['React.js', 'Node.js', 'Express', 'MongoDB', 'OpenAI API', 'TypeScript'],
-      github: 'https://github.com/anjanaunnip/ai-faq-assistant',
-      demo: 'https://ai-faq-assistant.vercel.app',
-      icon: '🤖',
-      featured: true,
-    },
-    {
-      title: 'ReliefHub',
-      description: 'Disaster relief coordination platform with donation management, resource allocation, and real-time request tracking. Integrated Razorpay payment gateway with role-based dashboards for different user types.',
-      gradient: 'from-[#00d9ff] to-[#3b82f6]',
-      technologies: ['Django', 'Bootstrap', 'Razorpay', 'MySQL', 'REST APIs'],
-      github: 'https://github.com/anjanaunnip/ReliefHub',
-      demo: 'https://reliefhub.example.com',
-      icon: '💝',
-      featured: true,
-    },
-    {
-      title: 'TownLet',
+  {
+    title: 'AgriVision WeedSense',
+    description: 'Full-stack web application for real-time agricultural image analysis and precision recommendations using ML-based weed detection with YOLOv8 and OpenCV for accurate image processing. Achieved 80-85% accuracy across 1000+ test images.',
+    gradient: 'from-[#9f7aea] to-[#6366f1]',
+    technologies: ['React.js', 'Django', 'YOLOv8', 'OpenCV', 'GIS', 'ML'],
+    github: 'https://github.com/anjanaunnip/AgriVision-WeedSense',
+    demo: 'https://agri-vision-weed-sense.vercel.app',
+    icon: '🌾',
+    featured: true,
+  },
+  {
+    title: 'AI-Powered FAQ Assistant',
+    description: 'Full-stack web application for managing FAQs with AI-based answer rewriting capability. Features complete CRUD operations, intelligent search, and semantic answer enhancement using modern AI text rewriting APIs.',
+    gradient: 'from-[#9f7aea] to-[#00d9ff]',
+    technologies: ['React.js', 'Node.js', 'Express', 'MongoDB', 'OpenAI API', 'TypeScript'],
+    github: 'https://github.com/anjanaunnip/ai-faq-assistant',
+    demo: 'https://ai-faq-assistant.vercel.app',
+    icon: '🤖',
+    featured: true,
+  },
+  {
+    title: 'ReliefHub',
+    description: 'Disaster relief coordination platform with donation management, resource allocation, and real-time request tracking. Integrated Razorpay payment gateway with role-based dashboards for different user types.',
+    gradient: 'from-[#00d9ff] to-[#3b82f6]',
+    technologies: ['Django', 'Bootstrap', 'Razorpay', 'MySQL', 'REST APIs'],
+    github: 'https://github.com/anjanaunnip/ReliefHub',
+    demo: 'https://reliefhub-b4vc.onrender.com/',
+    icon: '💝',
+    featured: true,
+  },
+  {
+    title: 'TownLet',
 
-      description:
-        'Community issue reporting mobile application that connects residents and ward members for reporting and tracking local issues. Includes complaint management, status updates, and role-based access.',
+    description:
+      'Community issue reporting mobile application that connects residents and ward members for reporting and tracking local issues. Includes complaint management, status updates, and role-based access.',
 
-      gradient: 'from-[#ec4899] to-[#f43f5e]',
+    gradient: 'from-[#ec4899] to-[#f43f5e]',
 
-      technologies: [
-        'Android',
-        'Java',
-        'XML',
-        'PHP',
-        'MySQL'
-      ],
+    technologies: [
+      'Android',
+      'Java',
+      'XML',
+      'PHP',
+      'MySQL'
+    ],
 
-      github: null,
+    github: null,
 
-      demo: null,
+    demo: null,
 
-      screenshots: [
-        '/projects/townlet/1.png',
-        '/projects/townlet/2.png',
-        '/projects/townlet/3.png',
-        '/projects/townlet/4.png',
-        '/projects/townlet/5.png',
-        '/projects/townlet/6.png',
-        '/projects/townlet/7.png',
-        '/projects/townlet/8.png',
-        '/projects/townlet/9.png',
-        '/projects/townlet/10.png',
-        '/projects/townlet/11.png',
-        '/projects/townlet/12.png',
-        '/projects/townlet/13.png',
-        '/projects/townlet/14.png'
-      ],
+    screenshots: [
+      '/projects/townlet/1.png',
+      '/projects/townlet/2.png',
+      '/projects/townlet/3.png',
+      '/projects/townlet/4.png',
+      '/projects/townlet/5.png',
+      '/projects/townlet/6.png',
+      '/projects/townlet/7.png',
+      '/projects/townlet/8.png',
+      '/projects/townlet/9.png',
+      '/projects/townlet/10.png',
+      '/projects/townlet/11.png',
+      '/projects/townlet/12.png',
+      '/projects/townlet/13.png',
+      '/projects/townlet/14.png'
+    ],
 
-      icon: '🏘️',
-    },
-  ];
+    icon: '🏘️',
+  },
+];
 
 export default function Projects() {
 
@@ -106,9 +106,7 @@ export default function Projects() {
   const [currentImage, setCurrentImage] = useState(0);
   const [projectTitle, setProjectTitle] = useState('');
 
-  const [demoPopup,setDemoPopup] = useState(false);
 
-  
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -190,16 +188,16 @@ export default function Projects() {
 
                     <motion.div
 
-                    animate={{
-                    opacity:[0.6,1,0.6]
-                    }}
+                      animate={{
+                        opacity: [0.6, 1, 0.6]
+                      }}
 
-                    transition={{
-                    duration:2,
-                    repeat:Infinity
-                    }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity
+                      }}
 
-                    className="
+                      className="
                     mt-3
                     inline-flex
                     items-center
@@ -218,11 +216,11 @@ export default function Projects() {
 
                     >
 
-                    {project.status}
+                      {project.status}
 
                     </motion.div>
 
-                    )}
+                  )}
                 </div>
 
                 {/* Description */}
@@ -294,18 +292,18 @@ export default function Projects() {
 
                   {project.demo && (
 
-                    <motion.button
+                    <motion.a
 
-whileHover={{
-scale:1.05,
-rotate:-5
-}}
+                      whileHover={{
+                        scale: 1.05,
+                        rotate: -5
+                      }}
 
-onClick={()=>{
-setDemoPopup(true);
-}}
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
 
-className="
+                      className="
 flex 
 items-center 
 space-x-2 
@@ -323,16 +321,16 @@ transition-all
 duration-300
 "
 
->
+                    >
 
-<ExternalLink size={18}/>
+                      <ExternalLink size={18} />
 
-<span className="text-sm">
-Live
-</span>
+                      <span className="text-sm">
+                        Live
+                      </span>
 
 
-</motion.button>
+                    </motion.a>
 
                   )}
 
@@ -664,108 +662,7 @@ ${currentImage === i
 
         )}
 
-        {demoPopup && (
 
-<motion.div
-
-initial={{opacity:0}}
-animate={{opacity:1}}
-
-className="
-fixed
-inset-0
-z-[999999]
-bg-black/80
-backdrop-blur-lg
-flex
-items-center
-justify-center
-"
-
->
-
-<motion.div
-
-initial={{
-scale:0.8,
-opacity:0
-}}
-
-animate={{
-scale:1,
-opacity:1
-}}
-
-className="
-w-[400px]
-bg-[#020617]
-rounded-2xl
-border
-border-cyan-400/40
-p-8
-text-center
-shadow-[0_0_40px_#00d9ff50]
-"
-
->
-
-<div className="text-5xl mb-4">
-🚀
-</div>
-
-
-<h2 className="
-text-2xl
-font-bold
-gradient-text
-mb-3
-">
-
-Launching Soon
-
-</h2>
-
-
-<p className="
-text-gray-300
-leading-relaxed
-">
-
-Live deployment is currently being optimized.
-The demo will be available soon with a better production experience.
-
-</p>
-
-
-<button
-
-onClick={()=>setDemoPopup(false)}
-
-className="
-mt-6
-px-6
-py-2
-rounded-lg
-bg-gradient-to-r
-from-[#9f7aea]
-to-[#00d9ff]
-text-black
-font-semibold
-"
-
->
-
-Got it
-
-</button>
-
-
-</motion.div>
-
-
-</motion.div>
-
-)}
       </div>
     </section>
   );

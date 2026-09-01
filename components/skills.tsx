@@ -184,7 +184,6 @@ export default function Skills() {
                     >
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
                       </div>
                       <motion.div
                         initial={{ width: 0 }}
