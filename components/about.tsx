@@ -128,6 +128,14 @@ export default function About() {
                 whileHover={{ x: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
+                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">Currently Pursuing</p>
+                <p className="text-base font-semibold text-foreground leading-relaxed">Advanced Certification in AI with Data Science &amp; Generative AI — ExpertzLab Technologies, Kochi, in collaboration with IIT Patna</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ x: 5 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <p className="text-sm text-muted-foreground uppercase tracking-wide mb-1">Role</p>
                 <p className="text-lg font-semibold text-foreground">Full Stack Developer</p>
               </motion.div>

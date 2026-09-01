@@ -58,7 +58,7 @@
 
 - [x] **Create new About page** - `/about` route created
 - [x] **Professional portrait** - Display with glowing effects
-- [x] **AI Augmented Developer** - Clearly marked in subtitle
+- [x] **Python Developer** - Clearly marked in subtitle
 - [x] **DOB Display** - December 15, 2003 (Age 23) shown
 - [x] **AI Tools Mention** - Notes using AI for development
 - [x] **Origin File Section** - Detailed biography/story
@@ -137,4 +137,4 @@
 
 ---
 
-The portfolio is now a professional, feature-rich platform showcasing Anjana's full-stack development skills, AI integration experience, and journey as an AI-augmented developer. It's optimized for recruiters from top tech companies and ready for production deployment.
+The portfolio is now a professional, feature-rich platform showcasing Anjana's full-stack development skills, AI integration experience, and journey as an Python developer. It's optimized for recruiters from top tech companies and ready for production deployment.
