@@ -163,7 +163,7 @@ export default function Hero() {
                         className="flex items-center space-x-2 p-2.5 rounded-lg bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/30 hover:border-purple-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
                       >
                         <Brain size={16} className="text-[#a855f7] flex-shrink-0" />
-                        <span className="text-sm text-foreground/90">AI-Augmented Dev</span>
+                        <span className="text-sm text-foreground/90">Python Developer</span>
                       </motion.div>
                     </div>
                   </div>

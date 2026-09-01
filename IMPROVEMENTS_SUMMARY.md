@@ -6,7 +6,7 @@
 - Created a dedicated `/about` route with comprehensive profile details
 - Features:
   - Professional portrait with glowing effects
-  - "AI-Augmented Full Stack Developer" tagline
+  - "Python Developer" tagline
   - Birth date display (December 15, 2003 - Age 23)
   - "ORIGIN FILE" section with detailed biography
   - Mention of using AI tools to accelerate development
@@ -101,7 +101,7 @@
 3. **Contact Accessibility** - Form-based contact instead of just buttons
 4. **Progressive Disclosure** - Certifications expand on demand
 5. **Accurate Data** - All information sourced from actual resumes
-6. **AI Developer Identity** - Clearly marked as "AI-Augmented Developer"
+6. **Python Developer Identity** - Clearly marked as "Python Developer"
 
 ## SEO & Metadata
 

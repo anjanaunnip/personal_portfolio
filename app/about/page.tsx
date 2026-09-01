@@ -93,7 +93,7 @@ export default function AboutPage() {
               <div>
                 <p className="text-sm text-[#00d9ff] font-semibold uppercase tracking-wider mb-2">Developer Profile</p>
                 <h1 className="text-5xl md:text-6xl font-bold mb-2">Anjana Unni P</h1>
-                <p className="text-2xl gradient-text font-bold">AI-Augmented Full Stack Developer</p>
+                <p className="text-2xl gradient-text font-bold">Python Developer</p>
               </div>
 
               <div className="space-y-3 text-foreground/80">
@@ -173,7 +173,7 @@ transition-all
 
             <div className="space-y-6 text-foreground/80 leading-relaxed">
               <p>
-                I am a 22-year-old full-stack software developer and <span className="text-[#00d9ff] font-semibold">AI-augmented developer</span> passionate about building scalable, intelligent applications that solve real-world problems. My journey in technology began with a strong foundation in programming and databases, which I built during my Bachelor of Computer Application degree at St. Mary's College, Thrissur (CGPA: 8.29/10.0).
+                I am a 22-year-old full-stack software developer and <span className="text-[#00d9ff] font-semibold">Python developer</span> passionate about building scalable, intelligent applications that solve real-world problems. My journey in technology began with a strong foundation in programming and databases, which I built during my Bachelor of Computer Application degree at St. Mary's College, Thrissur (CGPA: 8.29/10.0).
               </p>
 
               <p>
@@ -181,7 +181,7 @@ transition-all
               </p>
 
               <p>
-                As an <span className="text-[#9f7aea] font-semibold">AI-augmented developer</span>, I leverage AI tools to accelerate development cycles, enhance code quality, and build smarter solutions. I'm currently working as a Software Development Intern at ODIN Technologies, where I deliver full-stack applications, integrate AI capabilities, and implement WhatsApp automation systems.
+                As an <span className="text-[#9f7aea] font-semibold">Python developer</span>, I leverage AI tools to accelerate development cycles, enhance code quality, and build smarter solutions. I'm currently working as a Software Development Intern at ODIN Technologies, where I deliver full-stack applications, integrate AI capabilities, and implement WhatsApp automation systems.
               </p>
 
               <p>

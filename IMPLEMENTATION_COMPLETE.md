@@ -26,7 +26,7 @@
   - Code2 icon: Software Developer (cyan)
   - Cpu icon: Software Engineer (purple)
   - Zap icon: Full Stack Developer (cyan)
-  - Brain icon: AI-Augmented Dev (purple)
+  - Brain icon: Python Developer (purple)
 - Smooth hover animations with background color transitions
 - Border glow effect on hover
 - Responsive design (desktop floating card, mobile stacked)
