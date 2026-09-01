@@ -141,7 +141,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="https://github.com"
+              href="https://github.com/anjanaunnip"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-[#9f7aea] transition-colors"
@@ -151,7 +151,7 @@ export default function Navbar() {
 
             <motion.a
               whileHover={{ scale: 1.1 }}
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/anjanaunnip"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-[#00d9ff] transition-colors"
@@ -219,10 +219,10 @@ View Resume
               </button>
             ))}
             <div className="flex space-x-4 px-4 py-2">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/anjanaunnip" target="_blank" rel="noopener noreferrer">
                 <Github size={20} className="text-foreground" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/anjanaunnip" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={20} className="text-foreground" />
               </a>
             </div>
