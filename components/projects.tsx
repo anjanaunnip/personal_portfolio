@@ -22,7 +22,7 @@ export const projects = [
     github: null,
     demo: null,
 
-    status: '🚧 Development In Progress',
+    status: 'Progress: Backend and AI portions completed. Pending: frontend design, GitHub, and deployment.',
 
     icon: '🚀',
     featured: true,
@@ -45,6 +45,7 @@ export const projects = [
     technologies: ['React.js', 'Node.js', 'Express', 'MongoDB', 'OpenAI API', 'TypeScript'],
     github: 'https://github.com/anjanaunnip/ai-faq-assistant',
     demo: 'https://ai-faq-assistant.vercel.app',
+    status: 'Deployment pending',
     icon: '🤖',
     featured: true,
   },
